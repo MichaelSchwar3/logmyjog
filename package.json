@@ -7,6 +7,10 @@
     "lib": "lib",
     "test": "test"
   },
+  "engines": {
+    "node": "10.6.0",
+    "npm": "6.1.0"
+  },
   "dependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
@@ -26,6 +30,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "./node_modules/.bin/webpack --mode=production",
     "webpack": "webpack --mode=development --watch"
   },
   "repository": {
