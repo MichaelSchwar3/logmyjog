@@ -5,8 +5,21 @@ const Greeting = ({currentUser, logout}) => {
   if (currentUser) {
     return(
       <div id="greeting">
-        <h3>Welcome to LogMyJog {currentUser.fname}!</h3>
-        <button onClick={logout}>Logout</button>
+        <nav id="nav-id">
+          <div class="nav nav-hover" id="workouts">
+            Routes
+          </div>
+          <div class="nav nav-hover" id="routes">
+            Workouts
+          </div>
+          <div class="nav nav-hover" id="friends">
+            Friends
+          </div>
+          <div class="nav" id="logout-greeting">
+            <h3>Welcome {currentUser.fname}!</h3>
+            <button onClick={logout}>Logout</button>
+          </div>
+        </nav>
       </div>
     );
   }else {

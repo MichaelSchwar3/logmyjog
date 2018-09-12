@@ -3,9 +3,9 @@ header {
   background-color: #FFFFFF;
   color: #9A9EA9;
   display: flex;
-  justify-content: space-between;
   height: 65px;
   align-items: center;
+  justify-content: space-between;
   box-shadow: 0px 2px 14px 0px rgba(168,168,168,1);
   border-top: solid 1px #dbdbdb;
 }
@@ -26,9 +26,32 @@ header h1 span{
   font-size: 34px;
 }
 
+#nav-id{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav{
+  padding: 20px;
+  font-size: 16px;
+  margin-left: 35px;
+}
+
+.nav-hover:hover{
+  color: black;
+}
+
+#logout-greeting{
+  display: flex;
+  padding-left: 150px;
+  justify-content: space-around;
+  align-items: center;
+}
+
 #greeting{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-size: 14px;
 }
