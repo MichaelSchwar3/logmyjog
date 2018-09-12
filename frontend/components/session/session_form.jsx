@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
   }
   render() {
     return(
-      <div>
+      <div id='div-form'>
         {this.renderErrors()}
         <form onSubmit={this.handleSubmit} id="signup-form">
           <label id="email">

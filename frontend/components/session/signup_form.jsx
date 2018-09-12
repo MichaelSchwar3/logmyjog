@@ -40,9 +40,8 @@ class SignupForm extends React.Component {
     }
   }
   render() {
-    debugger
     return(
-      <div>
+      <div id='div-form'>
         {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <label id="fname">
