@@ -42,7 +42,8 @@ class SignupForm extends React.Component {
   render() {
     return(
       <div id='div-form'>
-        {this.renderErrors()}
+        <div id="navLink">{this.props.navLink}</div>
+        <div id="session-errors">{this.renderErrors()}</div>
         <form onSubmit={this.handleSubmit}>
           <label id="fname">
             <input type="text" value={this.state.fname} onChange={this.update('fname')} placeholder="First Name"/>
@@ -60,7 +61,7 @@ class SignupForm extends React.Component {
             <input type="submit" value={this.props.formType}/>
           </label>
         </form>
-        {this.props.navLink}<br/>
+
       </div>
     );
   }

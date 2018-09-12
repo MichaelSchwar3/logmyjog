@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 const Greeting = ({currentUser, logout}) => {
   if (currentUser) {
     return(
-      <div>
+      <div id="greeting">
         <h3>Welcome to LogMyJog {currentUser.fname}!</h3>
         <button onClick={logout}>Logout</button>
       </div>
     );
   }else {
     return(
-      <div>
-        <Link to='/login'>Log In</Link><br/>
-        <Link to='/signup'>Sign Up</Link>
+      <div id="greeting">
+        <span><Link to='/login'>Log In</Link></span>
+        <button id="signup-button"><Link to='/signup'>Sign Up</Link></button>
       </div>
     );
   }

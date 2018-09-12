@@ -25,10 +25,9 @@
   color: white;
   font-size: 12px;
   height: 100%;
-  margin: auto;
 }
 
-header {
+#root{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }

@@ -40,7 +40,8 @@ class SessionForm extends React.Component {
   render() {
     return(
       <div id='div-form'>
-        {this.renderErrors()}
+        <div id="navLink">{this.props.navLink}</div>
+        <div id="session-errors">{this.renderErrors()}</div>
         <form onSubmit={this.handleSubmit} id="signup-form">
           <label id="email">
             <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="E-mail"/>
@@ -52,7 +53,7 @@ class SessionForm extends React.Component {
             <input type="submit" value={this.props.formType}/>
           </label>
         </form>
-        {this.props.navLink}<br/>
+
       </div>
     );
   }
