@@ -19,33 +19,32 @@ export const logoutCurrentUser = ()=> {
 };
 
 export const receiveErrors = (errors)=> {
+  debugger
   return {
     type: RECEIVE_ERRORS,
     errors
   };
 };
 
-export const login = (user) => {
-  return (dispatch) => {
-    return APIUtil.login(user).then((user) => {
-      return dispatch(receiveCurrentUser(user));
-    });
-  };
-};
 
+export const signup = user => dispatch => (
+  APIUtil.signup(user).then(user => (
+    dispatch(receiveCurrentUser(user))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
+);
 
-export const signup = (user) => {
-  return (dispatch) => {
-    return APIUtil.signup(user).then((user) => {
-      return dispatch(receiveCurrentUser(user));
-    });
-  };
-};
+export const login = user => dispatch => (
+  APIUtil.login(user).then(user => (
+    dispatch(receiveCurrentUser(user))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
+);
 
-export const logout = () => {
-  return dispatch => {
-    return APIUtil.logout().then(() => {
-      return dispatch(logoutCurrentUser());
-    });
-  };
-};
+export const logout = () => dispatch => (
+  APIUtil.logout().then(() => (
+    dispatch(logoutCurrentUser())
+  ))
+);

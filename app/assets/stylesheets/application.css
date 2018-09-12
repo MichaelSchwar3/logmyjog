@@ -13,3 +13,44 @@
  *= require_tree .
  *= require_self
  */
+
+
+ html {
+   height: 100%;
+ }
+
+ body {
+  font-family: sans-serif;
+  background: white;
+  color: $grey;
+  font-size: 12px;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: $red;
+  padding: 10px;
+
+  img {
+    width: 43px;
+    height: 43px;
+  }
+}
+
+#root {
+  // 63px for header(43px picture, 10px padding), 40 px for padding
+  height: calc(100% - 63px - 40px);
+  padding: 20px 0;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+  text-align: center;
+  color: $black;
+}

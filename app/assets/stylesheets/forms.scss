@@ -1,0 +1,17 @@
+input {
+  height: 45px;
+  width: 320px;
+  border: 1px solid lightgray;
+  font-size: 100%;
+  margin: 15px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#input {
+  background-color: green;
+}

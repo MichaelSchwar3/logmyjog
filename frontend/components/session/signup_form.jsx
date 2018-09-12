@@ -10,6 +10,7 @@ class SignupForm extends React.Component {
       fname: "",
       lname: ""
     };
+    this.props.errors.session = [];
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) {
@@ -21,30 +22,34 @@ class SignupForm extends React.Component {
   update(field) {
     return e => (
       this.setState({
-        [field]: e.target.value
+        [field]: e.currentTarget.value
       })
     );
   }
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, idx) => {
-  //         return <li key={`error-${idx}`}>
-  //           {error}
-  //         </li>;
-  //       })}
-  //     </ul>
-  //   );
-  // }
+  renderErrors() {
+    if (this.props.errors.session) {
+      return(
+        <ul>
+          {this.props.errors.session.map((error, idx) => {
+            return <li key={`error-${idx}`}>
+              {error}
+            </li>;
+          })}
+        </ul>
+      );
+    }
+  }
   render() {
+    debugger
     return(
       <div>
+        {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <label id="fname">
             <input type="text" value={this.state.fname} onChange={this.update('fname')} placeholder="First Name"/>
           </label>
           <label id="lname">
-            <input type="text" value={this.state.fname} onChange={this.update('lname')} placeholder="Last Name"/>
+            <input type="text" value={this.state.lname} onChange={this.update('lname')} placeholder="Last Name"/>
           </label>
           <label id="email">
             <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="E-mail"/>

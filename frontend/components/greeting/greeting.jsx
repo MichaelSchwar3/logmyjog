@@ -5,8 +5,8 @@ const Greeting = ({currentUser, logout}) => {
   if (currentUser) {
     return(
       <div>
-        <h3>Welcome to LogMyJog!</h3>
-        <button onClick={logout(currentUser.id)}>Logout</button>
+        <h3>Welcome to LogMyJog {currentUser.fname}!</h3>
+        <button onClick={logout}>Logout</button>
       </div>
     );
   }else {

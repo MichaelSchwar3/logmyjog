@@ -8,7 +8,19 @@ import { signup, login, logout } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  const store = configureStore();
+  let store;
+  if (window.currentUser) {
+    const preLoadedState = {
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser }
+      },
+      session: { currentUserId: window.currentUser.id }
+    };
+    store = configureStore(preLoadedState);
+  }else {
+    store = configureStore();
+  }
+
 //Beginning of Testing
   window.getState = store.getState;
   window.dispatch = store.dispatch;

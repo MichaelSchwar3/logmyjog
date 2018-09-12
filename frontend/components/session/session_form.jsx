@@ -8,6 +8,7 @@ class SessionForm extends React.Component {
       email: "",
       password: "",
     };
+    this.props.errors.session = [];
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) {
@@ -19,24 +20,27 @@ class SessionForm extends React.Component {
   update(field) {
     return e => (
       this.setState({
-        [field]: e.target.value
+        [field]: e.currentTarget.value
       })
     );
   }
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, idx) => {
-  //         return <li key={`error-${idx}`}>
-  //           {error}
-  //         </li>;
-  //       })}
-  //     </ul>
-  //   );
-  // }
+  renderErrors() {
+    if (this.props.errors.session) {
+      return(
+        <ul>
+          {this.props.errors.session.map((error, idx) => {
+            return <li key={`error-${idx}`}>
+              {error}
+            </li>;
+          })}
+        </ul>
+      );
+    }
+  }
   render() {
     return(
       <div>
+        {this.renderErrors()}
         <form onSubmit={this.handleSubmit} id="signup-form">
           <label id="email">
             <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="E-mail"/>
