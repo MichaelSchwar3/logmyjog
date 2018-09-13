@@ -5,7 +5,7 @@ const Footer = () => {
   return(
     <div id="footer-bar">
       <div id="iphone-img">
-        <img src={'/assets/iphone.png'}/>
+        <img src={window.iphoneUrl}/>
       </div>
       <div id="footer-social">
         <ul>
