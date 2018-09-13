@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.3.1'
 
-
+gem 'figaro'
 gem 'annotate'
 gem 'jquery-rails'
 gem 'pry-rails'

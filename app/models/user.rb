@@ -7,6 +7,10 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :runs,
+    foreign_key: :runner_id,
+    class_name: :Run
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     if user && user.is_password?(password)

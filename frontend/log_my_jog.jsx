@@ -5,6 +5,7 @@ import Root from './components/root';
 
 //test imports
 import { signup, login, logout } from './actions/session_actions';
+import { fetchRuns } from './actions/run_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.signup = signup;
   window.logout = logout;
   window.store = store;
+  window.fetchRuns = fetchRuns
 
 //End of Testing
   ReactDOM.render(<Root store={store}/>, root);

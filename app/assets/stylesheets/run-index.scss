@@ -1,0 +1,38 @@
+.runs-index{
+
+  width: 950px;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font-size: 14px;
+  text-align: center;
+}
+
+.runs-index table{
+  width: 100%;
+  border-spacing: 0px;
+}
+
+tr{
+  height: 110px;
+  box-sizing: border-box;
+}
+
+tr:nth-child(even){
+  background-color: #F9F9F9;
+}
+
+tr:nth-child(odd){
+  background-color: #FFFFFF;
+}
+
+tr:hover{
+  background-color: #ECECEC;
+}
+
+td,th{
+  border: 0.5px solid #E6E6E5;
+  border-spacing: 0px;
+}
