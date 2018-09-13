@@ -1,0 +1,116 @@
+#splash-page{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+// #blue-hue{
+//   z-index: 2;
+//   background-color: skyblue;
+//   height: 600px;
+//   width: 100%;
+//   filter: opacity(.8);
+// }
+
+#splash-main{
+  margin:auto;
+  background-image: url(background-splash2.jpg);
+  background-size: cover;
+  height: 850px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#splash-main span{
+  font-weight: bold;
+  text-align: right;
+  color: white;
+  padding-top: 100px;
+  padding-right: 70px;
+  font-size: 54px;
+  // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#splash-main span p{
+  z-index: 3;
+  text-align: right;
+  font-size: 14px;
+}
+
+#splash-session-buttons{
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 14px;
+  font-style: italic;
+  color: white;
+}
+
+.splash-login-div{
+  margin-top: 30px;
+  font-size: 18px;
+  font-style: normal;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 3px;
+  border: 2px solid white;
+  height: 30px;
+}
+
+.splash-login-div:hover{
+  background-color: lightgray;
+  transition: background 0.5s ease-in-out;
+  // filter: background opacity(.);
+}
+
+#splash-signup-button{
+  font-style: normal;
+  font-size: 18px;
+  background-color: #1DDD7C;
+  color: #FFFFFF;
+  width: 290px;
+  height: 45px;
+  padding-left: 8.5px;
+  padding-right: 8.5px;
+  text-align: center;
+  height: 30px;
+  margin-left: 20px;
+  font-weight: normal;
+  border-radius: 3px;
+}
+
+#splash-signup-button:hover{
+  background-color: #17D073;
+  transition: background 0.5s ease-in-out;
+}
+
+
+#splash-bottom{
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  color: #9A9EA9;
+  font-size: 14px;
+  height: 500px;
+  width: 900px;
+}
+
+#splash-bottom h3{
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#splash-bottom h2{
+  font-size: 64px;
+}
+
+.splash-link{
+  margin: 10px;
+  width: 300px;
+  box-sizing: border-box;
+  text-align: center;
+}
