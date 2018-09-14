@@ -3,11 +3,12 @@ import RunMap from './map';
 import { createRun } from '../../actions/run_actions';
 
 const mapStateToProps = state =>({
-  run: state.entities.runs
+  run: state.entities.runs,
+  currentUserId: state.session.currentUserId
 });
 
 const mapDispatchToProps = dispatch =>({
-  createRun: (run)=>displatch(createRun(run))
+  createRun: (run)=>dispatch(createRun(run))
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(RunMap);

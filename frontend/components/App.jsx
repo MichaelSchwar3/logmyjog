@@ -21,7 +21,6 @@ const App = () => (
     <AuthRoute exact path='/' component={SplashContainer} />
     <ProtectedRoute exact path='/search' component={MapContainer} />
     <Route exact path='/' component={Footer} />
-    <Route exact path='/search' component={Footer} />
     <Route exact path='/runs' component={RunIndexContainer} />
   </div>
 );

@@ -5,6 +5,7 @@ const runsReducer = (state = {}, action) => {
  Object.freeze(state);
  switch (action.type) {
    case RECEIVE_RUNS:
+      debugger
      return action.runs;
    case RECEIVE_RUN:
      return merge({}, state, { [action.run.id]: action.run} );

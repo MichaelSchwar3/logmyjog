@@ -6,8 +6,14 @@ class RunMap extends React.Component{
     super(props);
     this.state = {
       polyline: "",
-      distance: 0
+      distance: 0,
+      location: "New York",
+      duration: 0,
+      completedRun: false,
+      name: "",
+      snapToRoads: false
     }
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentDidMount() {
     let map, infoWindow;
@@ -37,15 +43,31 @@ class RunMap extends React.Component{
     strokeWeight: 3
     });
     poly.setMap(map);
-    map.addListener('click', addLatLng.bind(this));
-    let path;
-    function addLatLng(event) {
-        path = poly.getPath();
-        path.push(event.latLng);
-        let marker = new google.maps.Marker({
-          position: event.latLng,
-          title: '#' + path.getLength(),
-          map: map
+    let service = new google.maps.DirectionsService();
+    let path = new google.maps.MVCArray();
+    google.maps.event.addListener(map, "click", snapRoads.bind(this));
+    function snapRoads(evt) {
+      if (path.getLength() === 0) {
+        path.push(evt.latLng);
+        poly.setPath(path);
+        let encodeString = google.maps.geometry.encoding.encodePath(path);
+        let lengthInMeters = google.maps.geometry.spherical.computeLength(path);
+        this.setState({
+          polyline: encodeString,
+          distance: (lengthInMeters * 0.000621371)
+        })
+      } else {
+        service.route({
+          origin: path.getAt(path.getLength() - 1),
+          destination: evt.latLng,
+          travelMode: google.maps.DirectionsTravelMode.DRIVING
+        }, function(result, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+            for (var i = 0, len = result.routes[0].overview_path.length;
+                i < len; i++) {
+              path.push(result.routes[0].overview_path[i]);
+            }
+          }
         });
         let encodeString = google.maps.geometry.encoding.encodePath(path);
         let lengthInMeters = google.maps.geometry.spherical.computeLength(path);
@@ -54,15 +76,51 @@ class RunMap extends React.Component{
           distance: (lengthInMeters * 0.000621371)
         })
       }
+  }
+
 
   };
-  updateRoute(){
+  update(field){
+    return e => {
+      this.setState({
+      [field]: e.target.value
+      })
+    }
+  }
 
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.createRun({
+      location: this.state.Location,
+      distance: this.state.distance,
+      duration: this.state.duration,
+      runner_id: this.props.currentUserId,
+      run_map: this.state.polyline,
+      name: this.state.name,
+      completed_run: this.state.completedRun
+    })
   }
   render() {
     return(
-      <div>
-
+      <div id="map-main">
+        <section id="map-sidebar">
+          <div id="route-details">
+            <div id="route-details-top">
+              Route Details
+            </div>
+            <div id="route-details-bot">
+              <form onSubmit={this.handleSubmit}>
+                <label htmlFor="name">
+                  <input type="text" value={this.state.name} onChange={this.update('name')} placeholder="Name this map"/>*
+                </label>
+                <label htmlFor="Location">
+                  <input id="bar" type="text" value={this.state.location} onChange={this.update('location')} placeholder="Location"/>*
+                </label>
+                <input id="route-submit" type="submit" value="Save Route"/>
+              </form>
+            </div>
+          </div>
+        </section>
         <div id="map-container" ref={ map => this.mapNode = map }>
 
         </div>
