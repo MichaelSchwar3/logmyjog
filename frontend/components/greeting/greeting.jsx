@@ -6,16 +6,16 @@ const Greeting = ({currentUser, logout}) => {
     return(
       <div id="greeting">
         <nav id="nav-id">
-          <div class="nav nav-hover" id="workouts">
+          <div className="nav nav-hover" id="workouts">
             Routes
           </div>
-          <div class="nav nav-hover" id="routes">
+          <div className="nav nav-hover" id="routes">
             Workouts
           </div>
-          <div class="nav nav-hover" id="friends">
+          <div className="nav nav-hover" id="friends">
             Friends
           </div>
-          <div class="nav" id="logout-greeting">
+          <div className="nav" id="logout-greeting">
             <h3>Welcome {currentUser.fname}!</h3>
             <button onClick={logout}>Logout</button>
           </div>

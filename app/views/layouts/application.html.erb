@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Mukta+Malar" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google[:api_key]}"%>
 
     <script type="text/javascript">
       window.iphoneUrl = "<%= image_url('iphone.png') %>"
@@ -17,7 +17,6 @@
   </head>
 
   <body>
-    <p><%= ENV['MAP_API'] %></p>
     <%= yield %>
   </body>
 </html>

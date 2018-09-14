@@ -11,6 +11,10 @@ class RunIndex extends React.Component {
   render () {
     return (
       <div className="runs-index">
+        <div id="runs-create-run">
+          <span>My Routes</span>
+          <button id="runs-create-run">Create a Route</button>
+        </div>
         <table>
           <thead>
             <tr>
