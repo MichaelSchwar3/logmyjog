@@ -53,8 +53,6 @@ class RunMap extends React.Component{
           polyline: encodeString,
           distance: (lengthInMeters * 0.000621371)
         })
-        console.log(("polyline is "+(lengthInMeters * 0.000621371)+" miles"));
-        console.log(("encoded string is "+ encodeString));
       }
 
   };
