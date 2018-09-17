@@ -16,7 +16,8 @@ class RunShow extends React.Component {
 }
 
   render () {
-    const run = this.props.run || {name: "", location: "", runMap:"" }
+    const run = this.props.run || {name: "", location: "" ,distance:0}
+    // const runner = this.props.user || {fname:"",lname:"",email:""}
     return (
       <div className="runs-show">
         <section id="runs-show-left">
@@ -25,6 +26,9 @@ class RunShow extends React.Component {
           </div>
           <div id="runs-show-details">
             <div id="runs-show-distance">
+              <span id="distance">DISTANCE</span>
+              <div>{run.distance.toFixed(3)}</div>
+              <span id="miles">miles</span>
             </div>
             <div id="runs-show-description">
               <span>BEGINS IN:</span><br/>
@@ -32,7 +36,7 @@ class RunShow extends React.Component {
             </div>
             <div id="runs-show-description">
               {run.location}<br/>
-              Placeholder for name
+              {run.fname} {run.lname}
             </div>
           </div>
           <div id="runs-show-map">

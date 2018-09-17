@@ -14,7 +14,6 @@ class RunIndex extends React.Component {
   }
 
   render () {
-    if(!this.props.runs) return null;
     return (
       <div className="runs-index">
         <div id="runs-create">
