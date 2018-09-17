@@ -13,7 +13,6 @@ export const fetchRun = (id) => {
 };
 
 export const createRun = (run) => {
-  debugger
   return $.ajax({
     method: 'POST',
     url: '/api/runs',

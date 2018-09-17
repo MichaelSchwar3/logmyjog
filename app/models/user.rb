@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :runs,
     foreign_key: :runner_id,
+    primary_key: :id,
     class_name: :Run
 
   def self.find_by_credentials(email, password)

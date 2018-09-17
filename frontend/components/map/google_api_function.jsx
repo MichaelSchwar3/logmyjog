@@ -191,6 +191,7 @@ function addLatLng(event) {
     });
     let encodeString = google.maps.geometry.encoding.encodePath(path);
     let lengthInMeters = google.maps.geometry.spherical.computeLength(path);
+    let decodepath = google.maps.geometry.encoding.decodePath(encodeString)
     this.setState({
       polyline: encodeString,
       distance: (lengthInMeters * 0.000621371)

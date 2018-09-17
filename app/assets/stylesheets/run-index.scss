@@ -1,18 +1,21 @@
 .runs-index{
-
-  width: 950px;
+  width: 1050px;
   margin: auto;
   margin-top: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   color: black;
   font-size: 14px;
   text-align: center;
 }
 
 .runs-index table{
-  width: 100%;
+  width: 1050px;
   border-spacing: 0px;
+  margin: auto;
 }
 
 tr{
@@ -35,17 +38,78 @@ tr:hover{
 td,th{
   border: 0.5px solid #E6E6E5;
   border-spacing: 0px;
+  padding: 15px;
 }
 
-#runs-create-run{
+#runs-create{
+  width: 1050px;
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
-  font-size: 18px;
+  margin-left: 5px;
+  font-size: 22px;
   color: black;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #d3d6dc;
 }
 
 #runs-create-run{
+  width: 130px;
   color: white;
-  background-color: orange;
+  background-color: #FF9527;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 3px;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+#runs-create-run:hover{
+    background-color: #EC800F;
+    transition: background 0.5s ease-in-out;
+}
+
+.run-td{
+  font-size: 14px;
+  color: black;
+  height: 120px;
+}
+
+.run-td a{
+  color: blue;
+}
+
+#run-map{
+  width: 105px;
+  box-sizing: border-box;
+}
+
+#run-time{
+  width: 155px;
+  box-sizing: border-box;
+}
+
+#run-distance{
+  width: 130px;
+  box-sizing: border-box;
+}
+
+#run-duration{
+  width: 130px;
+  box-sizing: border-box;
+}
+
+#run-name{
+  width: 125px;
+  box-sizing: border-box;
+}
+
+#run-location{
+  width: 185px;
+  box-sizing: border-box;
+}
+
+#run-option{
+  width: 120px;
+  box-sizing: border-box;
 }

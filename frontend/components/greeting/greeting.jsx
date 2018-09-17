@@ -6,14 +6,26 @@ const Greeting = ({currentUser, logout}) => {
     return(
       <div id="greeting">
         <nav id="nav-id">
-          <div className="nav nav-hover" id="workouts">
-            Routes
-          </div>
           <div className="nav nav-hover" id="routes">
+            Routes
+            <ul className="header-notifications">
+              <li><Link to="/routes/create">Create Route</Link></li>
+              <li><Link to="/workouts">My Routes</Link></li>
+            </ul>
+          </div>
+          <div className="nav nav-hover" id="workouts">
             Workouts
+            <ul className="header-notifications">
+              <li>Log Workout</li>
+              <li>My Workouts</li>
+            </ul>
           </div>
           <div className="nav nav-hover" id="friends">
             Friends
+            <ul className="header-notifications">
+              <li>My Friends</li>
+              <li>Find Friends</li>
+            </ul>
           </div>
           <div className="nav" id="logout-greeting">
             <h3>Welcome {currentUser.fname}!</h3>

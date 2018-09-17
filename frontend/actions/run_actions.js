@@ -27,7 +27,6 @@ export const removeRun = (runId)=> {
 };
 
 export const receiveErrors = (errors)=> {
-  debugger
   return {
     type: RECEIVE_ERRORS,
     errors
@@ -43,16 +42,15 @@ export const fetchRuns = () => dispatch => {
   }))
 };
 
-export const fetchRun = (id) => dispatch => (
-  RunAPIUtil.fetchRun(id).then( run => (
-    dispatch(receiveRun(run))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
-  ))
-);
+export const fetchRun = (id) => dispatch => {
+  return RunAPIUtil.fetchRun(id).then( run => {
+    return dispatch(receiveRun(run))
+  }, err => {
+    return dispatch(receiveErrors(err.responseJSON))
+  })
+};
 
 export const createRun = (run) => dispatch => {
-  debugger
   return RunAPIUtil.createRun(run).then( run => (
     dispatch(receiveRun(run))
   ), err => (

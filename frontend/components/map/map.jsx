@@ -71,11 +71,13 @@ class RunMap extends React.Component{
         });
         let encodeString = google.maps.geometry.encoding.encodePath(path);
         let lengthInMeters = google.maps.geometry.spherical.computeLength(path);
+        let decodePath = google.maps.geometry.encoding.decodePath(encodeString)
         this.setState({
           polyline: encodeString,
           distance: (lengthInMeters * 0.000621371)
         })
       }
+
   }
 
 
@@ -91,7 +93,7 @@ class RunMap extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     this.props.createRun({
-      location: this.state.Location,
+      location: this.state.location,
       distance: this.state.distance,
       duration: this.state.duration,
       runner_id: this.props.currentUserId,
@@ -99,6 +101,7 @@ class RunMap extends React.Component{
       name: this.state.name,
       completed_run: this.state.completedRun
     })
+    this.props.history.push('/workouts');
   }
   render() {
     return(

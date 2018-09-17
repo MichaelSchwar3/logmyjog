@@ -10,13 +10,13 @@ User.destroy_all
 Run.destroy_all
 
 users = User.create([
-  {email: "Michael@gmail.com", fname: "Michael", lname: "Schwartz", password: "Michael"},
-  {email: "Michael1@gmail.com", fname: "Michael1", lname: "Schwartz", password: "Michael"},
-  {email: "Michael2@gmail.com", fname: "Michael2", lname: "Schwartz", password: "Michael"},
+  {email: "Demo@gmail.com", fname: "Demo", lname: "User", password: "Testing123"},
+  {email: "Demo1@gmail.com", fname: "Demo1", lname: "User", password: "Testing123"},
+  {email: "Demo2@gmail.com", fname: "Demo3", lname: "User", password: "Testing123"},
   ])
 
 runs = Run.create([
-  {name: "Run1", run_map: "test1", location: "New York", distance: 3, duration: 3600, runner_id: User.first.id, completed_run: false},
-  {name: "Run2", run_map: "test2", location: "New York", distance: 4, duration: 1800, runner_id: User.second.id, completed_run: false},
-  {name: "Run3", run_map: "test3", location: "New York", distance: 5, duration: 7200, runner_id: User.third.id, completed_run: false},
+  {name: "NYC-Midtown", run_map: "ysvwFtsqbMBUfAVhDj@uRpm@_AzC_@nAQd@wBtGcC_BsBsAWQ{AeAiG}D_G{DnSoo@??t@cCFQzBzAmFtPmFxPqFtP{B{A{FuDpFwPbDgKd@sAtEaOfAgDlD_L", location: "New York", distance: 2.915, duration: 1405, runner_id: User.first.id, completed_run: true},
+  {name: "NYC-UWS", run_map: "_|{wFjtobM\\TnGaS}DkC{M{ImJkGqDaCuA{@gCcByG~S??eErM}B{A}B}AyFqD{FyD}B}AzCoJ??tAiEzBzA|FtDeMr`@??Y~@|BzAxFvDbGxDjB}FNLpBbBhBzA^TrE~C", location: "New York", distance: 2.644, duration: 1235, runner_id: User.first.id, completed_run: true},
+  {name: "NYC-LES", run_map: "knpwFt{qbMJi@oDyA@Uf@cCp@cDrB_KrAsGp@gDnFxBp@mDMAaCaA??}Aq@|C_OhKhE`HvCm@zC??s@jDCLPLbAb@d@PpGnCLFNs@BQVLDJFl@RxF{@e@", location: "New York", distance: 1.408, duration: 635, runner_id: User.first.id, completed_run: true},
   ])
