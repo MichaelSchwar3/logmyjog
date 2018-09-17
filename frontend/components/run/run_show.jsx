@@ -36,8 +36,7 @@ class RunShow extends React.Component {
             </div>
           </div>
           <div id="runs-show-map">
-            <img src={`https://maps.googleapis.com/maps/api/staticmap
-            ?size=80x80&path=weight:3%7Ccolor:orange%7Cenc:${run.runMap}&key=${window.apiKey}`}/>
+            <img src={`https://maps.googleapis.com/maps/api/staticmap?size=660x660&path=weight:3%7Ccolor:red%7Cenc:${run.runMap}&key=${window.apiKey}`}/>
           </div>
         </section>
         <section id="runs-show-right">

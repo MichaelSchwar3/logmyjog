@@ -9,7 +9,7 @@ const RunIndexItem = props => {
     <tr>
       <td className="run-td" id="run-map">
       <Link to={`/routes/${props.run.id}`}><img src={`https://maps.googleapis.com/maps/api/staticmap
-?size=80x80&path=weight:3%7Ccolor:orange%7Cenc:${props.run.runMap}&key=${window.apiKey}`}/></Link>
+?size=80x80&path=weight:3%7Ccolor:red%7Cenc:${props.run.runMap}&key=${window.apiKey}`}/></Link>
       </td>
       <td className="run-td" id="run-time"><Link to={`/routes/${props.run.id}`}>{formatDate(props.run.createdAt)}</Link></td>
       <td className="run-td" id="run-distance">{(props.run.distance).toFixed(3)} miles</td>
