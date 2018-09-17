@@ -31,6 +31,6 @@ export const updateRun = (run) => {
 export const removeRun = (runId) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/runs/runId`,
+    url: `/api/runs/${runId}`,
   });
 };
