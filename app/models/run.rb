@@ -4,7 +4,10 @@ class Run < ApplicationRecord
 
   belongs_to :runner,
     foreign_key: :runner_id,
-    primary_key: :id,
     class_name: :User
+
+  has_many :comments,
+    foreign_key: :run_id,
+    class_name: :Comment
 
 end
