@@ -1,5 +1,7 @@
 class Api::CommentsController < ApplicationController
 
   def index
-    @comments = Run.find(params[:id]).comments
+    # @comments = Comment.where(djkhfdsk)
   end
+
+end

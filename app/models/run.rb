@@ -6,8 +6,8 @@ class Run < ApplicationRecord
     foreign_key: :runner_id,
     class_name: :User
 
-  has_many :comments,
+  has_many :workouts,
     foreign_key: :run_id,
-    class_name: :Comment
+    class_name: :Workout
 
 end
