@@ -8,11 +8,15 @@
 
 User.destroy_all
 Run.destroy_all
+Friend.destroy_all
 
 users = User.create([
   {email: "Demo@gmail.com", fname: "Demo", lname: "User", password: "Testing123"},
   {email: "Demo1@gmail.com", fname: "Demo1", lname: "User", password: "Testing123"},
-  {email: "Demo2@gmail.com", fname: "Demo3", lname: "User", password: "Testing123"},
+  {email: "Demo2@gmail.com", fname: "Demo2", lname: "User", password: "Testing123"},
+  {email: "Demo3@gmail.com", fname: "Demo3", lname: "User", password: "Testing123"},
+  {email: "Demo3@gmail.com", fname: "Demo3", lname: "User", password: "Testing123"},
+  {email: "Demo4@gmail.com", fname: "Demo4", lname: "User", password: "Testing123"},
   ])
 
 runs = Run.create([
@@ -20,3 +24,13 @@ runs = Run.create([
   {name: "NYC-UWS", run_map: "_|{wFjtobM\\TnGaS}DkC{M{ImJkGqDaCuA{@gCcByG~S??eErM}B{A}B}AyFqD{FyD}B}AzCoJ??tAiEzBzA|FtDeMr`@??Y~@|BzAxFvDbGxDjB}FNLpBbBhBzA^TrE~C", location: "New York", distance: 2.644, duration: 1235, runner_id: User.first.id, completed_run: true},
   {name: "NYC-LES", run_map: "knpwFt{qbMJi@oDyA@Uf@cCp@cDrB_KrAsGp@gDnFxBp@mDMAaCaA??}Aq@|C_OhKhE`HvCm@zC??s@jDCLPLbAb@d@PpGnCLFNs@BQVLDJFl@RxF{@e@", location: "New York", distance: 1.408, duration: 635, runner_id: User.first.id, completed_run: true},
   ])
+
+
+  friends = Friend.create([
+    {friender_id: User.first.id, friendee_id: User.second.id, accepted: true},
+    {friender_id: User.first.id, friendee_id: User.third.id, accepted: true},
+    {friender_id: User.second.id, friendee_id: User.third.id, accepted: true},
+    {friender_id: User.third.id, friendee_id: User.first.id, accepted: false},
+    {friender_id: User.fourth.id, friendee_id: User.first.id, accepted: false},
+    {friender_id: User.first.id, friendee_id: User.fifth.id, accepted: false},
+    ])

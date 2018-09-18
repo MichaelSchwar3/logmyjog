@@ -1,6 +1,7 @@
-#friends-index{
+.friends-index{
   width: 770px;
   color: #3098d9;
+  margin-left: 25px;
 }
 
 #friends-index-head{
@@ -26,8 +27,72 @@
   margin-top: 10px;
 }
 
-#friend-item{
+.friend-item{
   background-color: #F8F8F8;
   color: #197CC2;
   font-size: 14px;
+  width: 345px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  border-bottom: 2px solid #dddddd;
+  border-right: 2px solid #dddddd;
+}
+.friend-request-item{
+  background-color: #F8F8F8;
+  color: #197CC2;
+  font-size: 14px;
+  width: 770px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  border-bottom: 2px solid #dddddd;
+  border-right: 2px solid #dddddd;
+}
+
+#friend-info-request{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 740px;
+}
+
+#friend-deny{
+  width: 60px;
+  height: 45px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #EBEBEB;
+  color: #818181;
+  border-radius: 3px;
+}
+
+#friend-deny:hover{
+  background-color: #D1D1D1;
+  transition: background 0.5s ease-in-out;
+}
+
+#friend-accept:hover{
+  background-color: #E56E06;
+  transition: background 0.5s ease-in-out;
+}
+
+#friend-accept{
+  width: 70px;
+  height: 45px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #FE8714;
+  color: #FFFFFF;
+  border-radius: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#friend-pic{
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 28px;
 }

@@ -20,9 +20,11 @@ const App = () => (
       <Route path='/' component={GreetingContainer} />
     </header>
     <AuthRoute exact path='/' component={SplashContainer} />
-    <ProtectedRoute path ='/' component={Nav}/>
+    <ProtectedRoute path ='/workouts/' component={Nav}/>
+    <ProtectedRoute path ='/people/' component={Nav}/>
+    <ProtectedRoute path ='/routes/views/' component={Nav}/>
     <ProtectedRoute exact path='/routes/create' component={MapContainer} />
-    <ProtectedRoute exact path='/routes/:runId' component={RunShowContainer} />
+    <ProtectedRoute exact path='/routes/views/:runId' component={RunShowContainer} />
     <ProtectedRoute exact path='/workouts' component={RunIndexContainer} />
     <ProtectedRoute exact path='/people/friends' component={FriendsIndexContainer} />
     <Switch>

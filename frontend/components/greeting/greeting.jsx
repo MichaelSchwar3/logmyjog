@@ -23,7 +23,7 @@ const Greeting = ({currentUser, logout}) => {
           <div className="nav nav-hover" id="friends">
             Friends
             <ul className="header-notifications">
-              <li>My Friends</li>
+              <li><Link to="/people/friends">My Friends</Link></li>
               <li>Find Friends</li>
             </ul>
           </div>

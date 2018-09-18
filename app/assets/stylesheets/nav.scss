@@ -2,18 +2,19 @@
   width: 100%;
   display: block;
   border: 1px solid #dddddd;
+  background-color: #F0F2F4;
 }
 
 #nav-bar{
-  width: 960px;
+  width: 1050px;
   height: 40px;
   display: flex;
   background-color: #F0F2F4;
-  margin: auto;
+  margin-left: 25px;
 }
 
 .nav-box{
-  width: 240px;
+  width: 262.5px;
   border-left: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
   border-bottom: 1px solid #dddddd;
@@ -23,6 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 
 }
 

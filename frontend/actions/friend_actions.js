@@ -12,7 +12,7 @@ export const receiveAllFriends= (friends) => {
   };
 };
 
-export const removeFriend = (runId)=> {
+export const removeFriend = (friendId)=> {
   return {
     type: REMOVE_FRIEND,
     friendId
@@ -43,17 +43,17 @@ export const createFriend = (userId, friend) => dispatch => {
   ))
 };
 
-export const updateFriend = (userId, friend) => dispatch => (
-  FriendAPIUtil.updateFriend(userId, friend).then( () => (
-    dispatch(receiveAllFriends(userId))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
-  ))
-);
+export const updateFriend = (userId, friend) => dispatch => {
+  return FriendAPIUtil.updateFriend(userId, friend).then( () => {
+    return dispatch(receiveAllFriends(userId))
+  }, err => {
+    return dispatch(receiveErrors(err.responseJSON))
+  })
+};
 
 export const deleteFriend = (userId, friendId) => dispatch => (
-  FriendAPIUtil.removeRun(userId, friendId).then( () => (
-    dispatch(removeRun(friendId))
+  FriendAPIUtil.removeFriend(userId, friendId).then( () => (
+    dispatch(removeFriend(friendId))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))

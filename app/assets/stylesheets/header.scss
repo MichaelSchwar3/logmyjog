@@ -5,7 +5,6 @@ header {
   display: flex;
   height: 65px;
   align-items: center;
-  justify-content: space-between;
   box-shadow: 0px 2px 14px 0px rgba(168,168,168,1);
   border-top: solid 1px #dbdbdb;
   // width: 1050px;
@@ -37,6 +36,7 @@ header img{
   justify-content: space-between;
   align-items: center;
   white-space: nowrap;
+  width: 840px;
 }
 
 .nav{
@@ -51,7 +51,7 @@ header img{
 
 #logout-greeting{
   display: flex;
-  padding-left: 150px;
+  padding-left: 410px;
   justify-content: space-around;
   align-items: center;
 }
