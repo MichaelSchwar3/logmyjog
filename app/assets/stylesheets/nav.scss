@@ -1,0 +1,32 @@
+#nav-bar-parent{
+  width: 100%;
+  display: block;
+  border: 1px solid #dddddd;
+}
+
+#nav-bar{
+  width: 960px;
+  height: 40px;
+  display: flex;
+  background-color: #F0F2F4;
+  margin: auto;
+}
+
+.nav-box{
+  width: 240px;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  color: #6D717A;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.nav-box:hover{
+  color: #222628;
+  border-bottom: 1px solid #222628;
+}

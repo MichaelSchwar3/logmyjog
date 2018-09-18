@@ -4,9 +4,11 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import RunIndexContainer from './run/run_index_container';
 import RunShowContainer from './run/run_show_container';
+import FriendsIndexContainer from './friends/friends_index_container';
 import MapContainer from './map/map_container';
 import SplashContainer from './splash/splash_container';
 import Footer from './footer/footer';
+import Nav from './nav/nav';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Link, Switch } from 'react-router-dom';
 
@@ -18,9 +20,11 @@ const App = () => (
       <Route path='/' component={GreetingContainer} />
     </header>
     <AuthRoute exact path='/' component={SplashContainer} />
+    <ProtectedRoute path ='/' component={Nav}/>
     <ProtectedRoute exact path='/routes/create' component={MapContainer} />
     <ProtectedRoute exact path='/routes/:runId' component={RunShowContainer} />
     <ProtectedRoute exact path='/workouts' component={RunIndexContainer} />
+    <ProtectedRoute exact path='/people/friends' component={FriendsIndexContainer} />
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
