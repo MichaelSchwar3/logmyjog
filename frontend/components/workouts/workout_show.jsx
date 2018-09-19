@@ -83,7 +83,7 @@ class WorkoutShow extends React.Component {
         </div>
         </section>
         <section id="workout-show-comments">
-            // <CommentsIndexContainer workout={workout} comments={this.props.comments} />
+            <CommentsIndexContainer workout={workout} comments={this.props.comments} />
         </section>
       </div>
     );
