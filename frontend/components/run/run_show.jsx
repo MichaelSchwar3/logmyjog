@@ -17,7 +17,6 @@ class RunShow extends React.Component {
 
   render () {
     const run = this.props.run || {name: "", location: "" ,distance:0}
-    // const runner = this.props.user || {fname:"",lname:"",email:""}
     return (
       <div className="runs-show">
         <section id="runs-show-left">

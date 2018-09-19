@@ -33,7 +33,8 @@ class Api::WorkoutsController < ApplicationController
   def destroy
     @workout = Workout.find(params[:id])
     @workout.destroy
-    render :show
+    @workouts = Workout.all
+    render :index
   end
 
   private
