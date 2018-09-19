@@ -9,10 +9,10 @@ const Nav = () => {
           <Link to="/workouts">My Dashboard</Link>
         </div>
         <div className="nav-box" id="nav-create">
-          <Link to="/routes/create">Create Workout</Link>
+          <Link to="/routes/create">Create Route</Link>
         </div>
         <div className="nav-box" id="nav-log">
-          Log Workout
+          <Link to="/workouts/create">Log Workout</Link>
         </div>
         <div className="nav-box" id="nav-friend">
           <Link to="/people/friends">My Friends</Link>

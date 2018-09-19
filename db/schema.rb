@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_18_172647) do
+ActiveRecord::Schema.define(version: 2018_09_18_181726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,9 +58,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_172647) do
   create_table "runs", force: :cascade do |t|
     t.string "location"
     t.float "distance", null: false
-    t.integer "duration"
     t.integer "runner_id", null: false
-    t.boolean "completed_run", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "run_map", null: false
@@ -82,14 +80,15 @@ ActiveRecord::Schema.define(version: 2018_09_18_172647) do
 
   create_table "workouts", force: :cascade do |t|
     t.string "name", null: false
-    t.date "start_time", null: false
     t.text "description", null: false
     t.integer "run_id", null: false
     t.float "distance", null: false
     t.integer "duration", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
     t.index ["run_id"], name: "index_workouts_on_run_id"
+    t.index ["user_id"], name: "index_workouts_on_user_id"
   end
 
 end

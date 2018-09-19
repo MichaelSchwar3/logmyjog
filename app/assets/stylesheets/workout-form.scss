@@ -1,0 +1,66 @@
+#workout-form-container{
+  width: 635px;
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: black;
+  font-size: 14px;
+  text-align: left;
+}
+
+#workout-form-container input{
+  margin-left: 0;
+}
+
+#workout-form-form{
+  display: flex;
+  padding-left: 25px;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #F6F7F8;
+  border: 1px solid #D9D9D9;
+}
+
+#workout-form-head{
+  width: 635px;
+  margin-top: 30px;
+  font-size: 22px;
+  color: black;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #d3d6dc;
+}
+
+#workout-form-name{
+  display: flex;
+  flex-direction: column;
+}
+#workout-form-description{
+  display: flex;
+  flex-direction: column;
+}
+#workout-form-description input{
+  width: 595px;
+  height: 75px;
+}
+
+#workout-form-select select{
+  width: 595px;
+}
+
+#workout-form-time input{
+  width: 85px;
+}
+
+#workout-save-button{
+  background-color: #0176C0;
+  border-radius: 3px;
+  width: 190px;
+  font-size: 16px;
+  color: white;
+  padding-left: 0px;
+  text-align: center;
+}

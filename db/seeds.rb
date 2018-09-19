@@ -20,17 +20,23 @@ users = User.create([
   ])
 
 runs = Run.create([
-  {name: "NYC-Midtown", run_map: "ysvwFtsqbMBUfAVhDj@uRpm@_AzC_@nAQd@wBtGcC_BsBsAWQ{AeAiG}D_G{DnSoo@??t@cCFQzBzAmFtPmFxPqFtP{B{A{FuDpFwPbDgKd@sAtEaOfAgDlD_L", location: "New York", distance: 2.915, duration: 1405, runner_id: User.first.id, completed_run: true},
-  {name: "NYC-UWS", run_map: "_|{wFjtobM\\TnGaS}DkC{M{ImJkGqDaCuA{@gCcByG~S??eErM}B{A}B}AyFqD{FyD}B}AzCoJ??tAiEzBzA|FtDeMr`@??Y~@|BzAxFvDbGxDjB}FNLpBbBhBzA^TrE~C", location: "New York", distance: 2.644, duration: 1235, runner_id: User.first.id, completed_run: true},
-  {name: "NYC-LES", run_map: "knpwFt{qbMJi@oDyA@Uf@cCp@cDrB_KrAsGp@gDnFxBp@mDMAaCaA??}Aq@|C_OhKhE`HvCm@zC??s@jDCLPLbAb@d@PpGnCLFNs@BQVLDJFl@RxF{@e@", location: "New York", distance: 1.408, duration: 635, runner_id: User.first.id, completed_run: true},
+  {name: "NYC-Midtown", run_map: "ysvwFtsqbMBUfAVhDj@uRpm@_AzC_@nAQd@wBtGcC_BsBsAWQ{AeAiG}D_G{DnSoo@??t@cCFQzBzAmFtPmFxPqFtP{B{A{FuDpFwPbDgKd@sAtEaOfAgDlD_L", location: "New York", distance: 2.915, runner_id: User.first.id},
+  {name: "NYC-UWS", run_map: "_|{wFjtobM\\TnGaS}DkC{M{ImJkGqDaCuA{@gCcByG~S??eErM}B{A}B}AyFqD{FyD}B}AzCoJ??tAiEzBzA|FtDeMr`@??Y~@|BzAxFvDbGxDjB}FNLpBbBhBzA^TrE~C", location: "New York", distance: 2.644, runner_id: User.first.id},
+  {name: "NYC-LES", run_map: "knpwFt{qbMJi@oDyA@Uf@cCp@cDrB_KrAsGp@gDnFxBp@mDMAaCaA??}Aq@|C_OhKhE`HvCm@zC??s@jDCLPLbAb@d@PpGnCLFNs@BQVLDJFl@RxF{@e@", location: "New York", distance: 1.408, runner_id: User.first.id},
   ])
 
 
-  friends = Friend.create([
-    {friender_id: User.first.id, friendee_id: User.second.id, accepted: true},
-    {friender_id: User.first.id, friendee_id: User.third.id, accepted: true},
-    {friender_id: User.second.id, friendee_id: User.third.id, accepted: true},
-    {friender_id: User.third.id, friendee_id: User.first.id, accepted: false},
-    {friender_id: User.fourth.id, friendee_id: User.first.id, accepted: false},
-    {friender_id: User.first.id, friendee_id: User.fifth.id, accepted: false},
-    ])
+friends = Friend.create([
+  {friender_id: User.first.id, friendee_id: User.second.id, accepted: true},
+  {friender_id: User.first.id, friendee_id: User.third.id, accepted: true},
+  {friender_id: User.second.id, friendee_id: User.third.id, accepted: true},
+  {friender_id: User.third.id, friendee_id: User.first.id, accepted: false},
+  {friender_id: User.fourth.id, friendee_id: User.first.id, accepted: false},
+  {friender_id: User.first.id, friendee_id: User.fifth.id, accepted: false},
+  ])
+
+workouts = Workout.create([
+    {name: "Workout 1", description: "Description here", user_id: User.first.id, run_id: Run.first.id, distance: Run.first.distance, duration: 3623},
+    {name: "Workout 2", description: "Description here2", user_id: User.first.id, run_id: Run.second.id, distance: Run.second.distance, duration: 1423},
+    {name: "Workout 3", description: "Description here3", user_id: User.first.id, run_id: Run.third.id, distance: Run.third.distance, duration: 2432},
+  ])

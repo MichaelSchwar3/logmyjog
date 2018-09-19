@@ -39,7 +39,7 @@ class Api::RunsController < ApplicationController
 private
 
   def run_params
-    params.require(:run).permit(:location, :distance, :duration, :completed_run, :run_map, :name, :runner_id)
+    params.require(:run).permit(:location, :distance, :run_map, :name, :runner_id)
   end
 
 end

@@ -10,14 +10,14 @@ const Greeting = ({currentUser, logout}) => {
             Routes
             <ul className="header-notifications">
               <li><Link to="/routes/create">Create Route</Link></li>
-              <li><Link to="/workouts">My Routes</Link></li>
+              <li><Link to="/routes/my_routes">My Routes</Link></li>
             </ul>
           </div>
           <div className="nav nav-hover" id="workouts">
             Workouts
             <ul className="header-notifications">
-              <li>Log Workout</li>
-              <li>My Workouts</li>
+              <li><Link to="/workouts/create/">Log Workout</Link></li>
+              <li><Link to="/workouts/">My Workouts</Link></li>
             </ul>
           </div>
           <div className="nav nav-hover" id="friends">

@@ -1,1 +1,1 @@
-json.extract! run, :id, :location, :distance, :duration, :runner_id, :completed_run, :run_map
+json.extract! run, :id, :location, :distance, :runner_id, :run_map

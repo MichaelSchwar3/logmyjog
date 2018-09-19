@@ -6,10 +6,8 @@ class RunMap extends React.Component{
     super(props);
     this.state = {
       polyline: "",
-      distance: 0,
       location: "New York",
       duration: 0,
-      completedRun: false,
       name: "",
       snapToRoads: false
     }
@@ -95,11 +93,9 @@ class RunMap extends React.Component{
     this.props.createRun({
       location: this.state.location,
       distance: this.state.distance,
-      duration: this.state.duration,
       runner_id: this.props.currentUserId,
       run_map: this.state.polyline,
       name: this.state.name,
-      completed_run: this.state.completedRun
     })
     this.props.history.push('/workouts');
   }

@@ -1,4 +1,4 @@
-class Api::CommentsController < ApplicationController
+class Api::WorkoutsController < ApplicationController
 
   def index
     @workouts = Workout.all
@@ -39,7 +39,7 @@ class Api::CommentsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).permit(:name, :start_time, :description, :distance, :duration)
+    params.require(:workout).permit(:name, :description, :distance, :duration, :run_id, :user_id)
   end
 
   end

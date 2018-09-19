@@ -6,7 +6,7 @@ export const formatDate = date => {
   return `${month}/${day}/${year}`;
 };
 
-export const formatTime = duration => {
+export const formatTime = (duration) => {
   const fullHours = (duration -(duration %3600))/3600
   duration = duration - (fullHours * 3600)
   const minutes = (duration - (duration % 60))/60
@@ -17,3 +17,8 @@ export const formatTime = duration => {
   const paddedSeconds = tmpSec.slice(tmpSec.length - 2);
   return `${fullHours}:${paddedMinutes}:${paddedSeconds}`;
 };
+
+export const formatDuration = (hours, mins, secs) => {
+  secs += (hours * 3600) + (mins * 60);
+  return secs
+}

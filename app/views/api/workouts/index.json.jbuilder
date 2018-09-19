@@ -1,6 +1,6 @@
 json.key_format! camelize: :lower
-@users.each do |user|
-  json.set! user.id do
-    json.extract! user, :id, :fname, :lname, :email
+@workouts.each do |workout|
+  json.set! workout.id do
+    json.extract! workout, :id, :name, :description, :run_id, :distance, :duration, :user_id, :created_at
   end
 end

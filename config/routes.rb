@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:create, :destroy]
     resources :runs
+    resources :workouts
   end
 end
