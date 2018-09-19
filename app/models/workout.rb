@@ -14,4 +14,8 @@ class Workout < ApplicationRecord
     through: :route,
     source: :runner
 
+  has_many :comments,
+    foreign_key: :run_id,
+    class_name: :Comment
+
 end

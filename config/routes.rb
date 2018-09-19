@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :runs
     resources :workouts
+    resources :comments, only: [:create, :destroy, :index]
   end
 end

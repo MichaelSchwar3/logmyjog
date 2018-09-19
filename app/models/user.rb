@@ -24,6 +24,10 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Workout
 
+  has_many :comments,
+    foreign_key: :author_id,
+    class_name: :Comment
+
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

@@ -1,7 +1,6 @@
 import React from 'react';
 import WorkoutIndexItem from './workout_index_item';
 import { Link } from 'react-router-dom';
-// import CreateWorkoutFormContainer from './create_workout_form_container';
 
 class WorkoutIndex extends React.Component {
 

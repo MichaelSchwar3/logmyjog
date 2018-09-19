@@ -10,6 +10,7 @@ User.destroy_all
 Run.destroy_all
 Friend.destroy_all
 Workout.destroy_all
+Comment.destroy_all
 
 users = User.create([
   {email: "Demo@gmail.com", fname: "Demo", lname: "User", password: "Testing123"},
@@ -40,4 +41,13 @@ workouts = Workout.create([
     {name: "Workout 1", description: "Description here", user_id: User.first.id, run_id: Run.first.id, distance: Run.first.distance, duration: 3623},
     {name: "Workout 2", description: "Description here2", user_id: User.first.id, run_id: Run.second.id, distance: Run.second.distance, duration: 1423},
     {name: "Workout 3", description: "Description here3", user_id: User.first.id, run_id: Run.third.id, distance: Run.third.distance, duration: 2432},
+  ])
+
+comments = Comment.create([
+    {body: "Way to go!", run_id: Workout.first.id, author_id: User.second.id},
+    {body: "Way to go again!", run_id: Workout.first.id, author_id: User.third.id},
+    {body: "Way to go from myself!", run_id: Workout.first.id, author_id: User.first.id},
+    {body: "Way to go from myself!", run_id: Workout.second.id, author_id: User.first.id},
+    {body: "Way to go from myself! x2", run_id: Workout.second.id, author_id: User.first.id},
+    {body: "Way to go from myself!", run_id: Workout.third.id, author_id: User.first.id},
   ])

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Redirect} from 'react-router-dom';
 import { formatTime, formatPace, formatDate } from '../../util/date_util';
+import CommentsIndexContainer from '../comments/comments_index_container';
 
 class WorkoutShow extends React.Component {
   constructor(props){
@@ -81,8 +82,7 @@ class WorkoutShow extends React.Component {
         </div>
         </section>
         <section id="workout-show-comments">
-          <div id="wsi-bottom">
-          </div>
+            <CommentsIndexContainer />
         </section>
       </div>
     );
