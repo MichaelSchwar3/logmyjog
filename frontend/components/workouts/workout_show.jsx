@@ -69,7 +69,7 @@ class WorkoutShow extends React.Component {
             <div id="wsi-middle-map-left">
               <img src={`https://maps.googleapis.com/maps/api/staticmap?size=620x360&path=weight:3%7Ccolor:red%7Cenc:${workout.runMap}&key=${window.apiKey}`}/>
               <div id="wsi-below-map">
-                <div id="view-route">VIEW ROUTE <Link to={`routes/view/${workout.runId}`}>
+                <div id="view-route">VIEW ROUTE <Link to={`/routes/views/${workout.runId}`}>
                 {workout.routeName}</Link></div>
                 <div id="mapped">MAPPED {formatDate(workout.routeCreation)} BY &nbsp;
                  <Link to={`/users/${workout.routeCreatorId}`}>

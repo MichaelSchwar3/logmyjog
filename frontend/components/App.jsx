@@ -31,7 +31,7 @@ const App = () => (
     <ProtectedRoute exact path='/routes/my_routes' component={RunIndexContainer} />
     <ProtectedRoute exact path='/people/friends' component={FriendsIndexContainer} />
     <ProtectedRoute exact path='/workouts/create/' component={WorkoutFormContainer} />
-    <ProtectedRoute exact path='/workouts/:workoutId/' component={WorkoutShowContainer} />
+    <ProtectedRoute exact path='/workouts/views/:workoutId/' component={WorkoutShowContainer} />
     <ProtectedRoute exact path='/workouts/' component={WorkoutIndexContainer} />
 
     <Switch>
