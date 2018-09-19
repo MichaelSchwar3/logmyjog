@@ -25,7 +25,6 @@ class WorkoutShow extends React.Component {
   }
 
   render () {
-    debugger
     const workout = this.props.workout || {name: "", distance: "" ,distance: "", duration: ""}
     return (
       <div className="workout-show">
