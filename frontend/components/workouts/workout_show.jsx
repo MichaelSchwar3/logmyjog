@@ -14,7 +14,7 @@ class WorkoutShow extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
   if (this.props.match.params.workoutId !== nextProps.match.params.workoutId) {
     this.props.fetchWorkout(nextProps.match.params.workoutId)
   }
@@ -25,6 +25,7 @@ class WorkoutShow extends React.Component {
   }
 
   render () {
+    debugger
     const workout = this.props.workout || {name: "", distance: "" ,distance: "", duration: ""}
     return (
       <div className="workout-show">
