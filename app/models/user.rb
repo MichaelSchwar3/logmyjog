@@ -20,10 +20,6 @@ class User < ApplicationRecord
     foreign_key: :friender_id,
     class_name: :Friend
 
-  has_many :comments,
-    foreign_key: :author_id,
-    class_name: :Comment
-
   has_many :workouts,
     foreign_key: :user_id,
     class_name: :Workout
