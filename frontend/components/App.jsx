@@ -7,6 +7,7 @@ import RunShowContainer from './run/run_show_container';
 import FriendsIndexContainer from './friends/friends_index_container';
 import WorkoutIndexContainer from './workouts/workout_index_container';
 import WorkoutFormContainer from './workouts/workout_form_container';
+import WorkoutShowContainer from './workouts/workout_show_container';
 import MapContainer from './map/map_container';
 import SplashContainer from './splash/splash_container';
 import Footer from './footer/footer';
@@ -30,6 +31,7 @@ const App = () => (
     <ProtectedRoute exact path='/routes/my_routes' component={RunIndexContainer} />
     <ProtectedRoute exact path='/people/friends' component={FriendsIndexContainer} />
     <ProtectedRoute exact path='/workouts/create/' component={WorkoutFormContainer} />
+    <ProtectedRoute exact path='/workouts/:workoutId/' component={WorkoutShowContainer} />
     <ProtectedRoute exact path='/workouts/' component={WorkoutIndexContainer} />
 
     <Switch>

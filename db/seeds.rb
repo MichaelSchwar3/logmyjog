@@ -9,6 +9,7 @@
 User.destroy_all
 Run.destroy_all
 Friend.destroy_all
+Workout.destroy_all
 
 users = User.create([
   {email: "Demo@gmail.com", fname: "Demo", lname: "User", password: "Testing123"},

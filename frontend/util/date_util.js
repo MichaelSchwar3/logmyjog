@@ -22,3 +22,8 @@ export const formatDuration = (hours, mins, secs) => {
   secs += (hours * 3600) + (mins * 60);
   return secs
 }
+
+export const formatPace = (seconds, distance) => {
+  let pace = formatTime(Math.floor(seconds/distance));
+  return pace.slice(3);
+}
