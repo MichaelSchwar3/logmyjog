@@ -60,3 +60,38 @@
 #comment-time{
   color: #707070
 }
+
+#comments-form{
+  width: 625px;
+  height: 60px;
+  text-align: center;
+}
+#comments-form form {
+  display: flex;
+  flex-direction: row;
+}
+
+#comments-form-icon{
+  font-size: 34px;
+}
+
+#comment-input{
+  width: 500px;
+  height: 30px;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding-left: 10px;
+}
+
+
+#comment-submit{
+  color: #2F98D9;
+  text-align: center;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #2F98D9;
+  height: 30px;
+  width: 50px;
+  padding-left: 0;
+  box-sizing: border-box;
+}

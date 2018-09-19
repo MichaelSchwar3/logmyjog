@@ -1,7 +1,7 @@
 class Api::CommentsController < ApplicationController
 
   def index
-    @comments = Comment.where(run_id: params[:runId])
+
   end
 
   def create

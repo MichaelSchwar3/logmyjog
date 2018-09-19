@@ -27,14 +27,18 @@ class CommentForm extends React.Component {
       author_id: this.props.user,
     }
     this.props.createComment(com)
+    this.setState({
+      body: ""
+    })
   }
 
   render () {
     return (
       <div id="comments-form">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.body} onChange={this.update('body')}/>
-          <input type="submit" value="POST"/>
+          <span id="comments-form-icon">&#128100;</span>
+          <input id="comment-input" type="text" value={this.state.body} onChange={this.update('body')}/>
+          <input id="comment-submit" type="submit" value="POST"/>
         </form>
       </div>
     );
