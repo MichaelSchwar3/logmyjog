@@ -5,10 +5,10 @@ export const RECEIVE_WORKOUTS = 'RECEIVE_WORKOUTS';
 export const REMOVE_WORKOUT = 'REMOVE_WORKOUT';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
-export const receiveWorkout = (workout) => {
+export const receiveWorkout = (payload) => {
   return {
     type: RECEIVE_WORKOUT,
-    workout
+    payload
   };
 };
 

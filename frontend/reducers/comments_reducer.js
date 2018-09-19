@@ -1,4 +1,5 @@
 import { RECEIVE_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT} from '../actions/comment_actions';
+import { RECEIVE_WORKOUT } from '../actions/workout_actions';
 import { merge } from 'lodash';
 
 const commentsReducer = (state = {}, action) => {
@@ -12,6 +13,8 @@ const commentsReducer = (state = {}, action) => {
      const newState = merge({}, state);
      delete newState[action.commentId];
      return newState;
+   case RECEIVE_WORKOUT:
+     return action.payload.comments
    default:
      return state;
  }

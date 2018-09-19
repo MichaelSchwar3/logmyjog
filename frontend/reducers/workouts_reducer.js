@@ -7,7 +7,7 @@ const workoutsReducer = (state = {}, action) => {
    case RECEIVE_WORKOUTS:
      return action.workouts;
    case RECEIVE_WORKOUT:
-     return merge({}, state, { [action.workout.id]: action.workout} );
+     return merge({}, state, { [action.payload.workout.id]: action.payload.workout} );
    case REMOVE_WORKOUT:
      const newState = merge({}, state);
      delete newState[action.workoutId];

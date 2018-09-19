@@ -36,9 +36,9 @@ export const receiveErrors = (errors)=> {
 };
 
 
-export const fetchComments = () => dispatch => {
+export const fetchComments = (runId) => dispatch => {
   return (
-    CommentAPIUtil.fetchComments().then( comments => {
+    CommentAPIUtil.fetchComments(runId).then( comments => {
     return dispatch(receiveAllComments(comments))
   }, err => {
     return dispatch(receiveErrors(err.responseJSON))

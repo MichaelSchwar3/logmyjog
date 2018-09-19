@@ -1,8 +1,7 @@
 class Api::CommentsController < ApplicationController
 
   def index
-    debugger
-    @comments = Comment.where(run_id: params[:id])
+    @comments = Comment.where(run_id: params[:runId])
   end
 
   def create

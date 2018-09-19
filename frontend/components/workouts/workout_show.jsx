@@ -27,6 +27,7 @@ class WorkoutShow extends React.Component {
 
   render () {
     const workout = this.props.workout || {name: "", distance: "" ,distance: "", duration: ""}
+    const run = this.props.run
     return (
       <div className="workout-show">
         <section id="workout-show-info">
@@ -68,13 +69,13 @@ class WorkoutShow extends React.Component {
         <div id="wsi-middle">
           <div id="wsi-middle-map">
             <div id="wsi-middle-map-left">
-              <img src={`https://maps.googleapis.com/maps/api/staticmap?size=620x360&path=weight:3%7Ccolor:red%7Cenc:${workout.runMap}&key=${window.apiKey}`}/>
+              <img src={`https://maps.googleapis.com/maps/api/staticmap?size=620x360&path=weight:3%7Ccolor:red%7Cenc:${run.runMap}&key=${window.apiKey}`}/>
               <div id="wsi-below-map">
                 <div id="view-route">VIEW ROUTE <Link to={`/routes/views/${workout.runId}`}>
-                {workout.routeName}</Link></div>
-                <div id="mapped">MAPPED {formatDate(workout.routeCreation)} BY &nbsp;
+                {run.name}</Link></div>
+                <div id="mapped">MAPPED {formatDate(run.createdAt)} BY &nbsp;
                  <Link to={`/users/${workout.routeCreatorId}`}>
-                  {workout.routeCreatorFName} {workout.routeCreatorLName} </Link>
+                  {run.routeCreatorFName} {run.routeCreatorLName} </Link>
                  </div>
               </div>
             </div>
@@ -82,7 +83,7 @@ class WorkoutShow extends React.Component {
         </div>
         </section>
         <section id="workout-show-comments">
-            <CommentsIndexContainer />
+            <CommentsIndexContainer comments={this.props.comments} />
         </section>
       </div>
     );
