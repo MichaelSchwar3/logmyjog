@@ -7,7 +7,124 @@
 }
 
 #workout-show-info{
+  box-sizing: border-box;
   width: 630px;
-  height: 255px;
+  height: 210px;
   border: 1px solid #C3C2C2;
+  margin-bottom: 20px;
+}
+
+#wsi-head-title{
+  padding-left: 15px;
+  color: black;
+  font-size: 24px;
+}
+
+#wsi-head-body{
+  padding-left: 15px;
+  width: 630px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+}
+
+.wsi-head-body-obj{
+  display: flex;
+  flex-direction: column;
+  width: 116px;
+}
+
+#distance{
+  font-size: 14px;
+}
+#duration{
+  font-size: 14px;
+}
+#pace{
+  font-size: 14px;
+}
+
+#distance-miles{
+  font-size: 24px;
+}
+
+#duration-time{
+  font-size: 24px;
+}
+#pace-time{
+  font-size: 24px;
+}
+
+#wsi-head-bottom{
+  display: flex;
+  align-items: flex-start;
+  border-top: 1px solid #C3C2C2;
+  border-bottom: 1px solid #C3C2C2;
+}
+
+#wsi-head-bottom-icon{
+  padding-left: 15px;
+  font-size: 34px;
+  margin-right: 5px;
+}
+
+#wsi-head-buttons{
+  margin-top: 10px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+#wsi-edit{
+  width: 50px;
+  height: 25px;
+  margin-left: 15px;
+  margin-right: 5px;
+  background-color: #FF8A18;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+}
+#wsi-edit:hover{
+  background-color: #E77209;
+}
+
+#wsi-delete{
+  width: 75px;
+  height: 25px;
+  background-color: #B3B3B3;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+}
+
+#wsi-delete:hover{
+  background-color: #7E7D7D;
+}
+
+#wsi-middle-map{
+  width: 630px;
+  height: 395px;
+  border: 1px solid #C3C2C2;
+}
+
+#wsi-middle-map-left{
+  display: flex;
+  flex-direction: column;
+}
+
+#wsi-below-map{
+  display: flex;
+}
+
+
+#mapped{
+  margin-left: 30px;
+}
+
+#view-route a{
+  color: #2F98D9
+}
+
+#mapped a{
+  color: #2F98D9
 }
