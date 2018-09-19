@@ -1,6 +1,6 @@
 import React from 'react';
 import CommentIndexItem from './comment_index_item';
-// import CommentForm from './comment_form_container';
+import CommentForm from './comment_form_container';
 import { Link } from 'react-router-dom';
 
 class CommentIndex extends React.Component {
@@ -17,6 +17,9 @@ class CommentIndex extends React.Component {
             {this.props.comments.map( comment =>{
               return <CommentIndexItem comment={comment} key={`comment-${comment.id}`} deleteComment={this.props.deleteComment} key={`comment-${comment.id}`}/>;
             })}
+        </div>
+        <div id="comment-create">
+          <CommentForm workout={this.props.workout} />
         </div>
       </div>
     );

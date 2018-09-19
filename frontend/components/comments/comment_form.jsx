@@ -1,5 +1,4 @@
 import React from 'react';
-// import CommentForm from './comment_form_container';
 import { Link } from 'react-router-dom';
 
 class CommentForm extends React.Component {
@@ -8,8 +7,8 @@ class CommentForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       body: "",
-      run_id: this.props.workout.id,
-      author_id: this.props.user.currentUserId
+      run_id: 0,
+      author_id: 0
     }
   }
 
@@ -22,7 +21,12 @@ class CommentForm extends React.Component {
   }
 
   handleSubmit(){
-    this.props.createComment(this.state)
+    const com = {
+      body: this.state.body,
+      run_id: this.props.workout.id,
+      author_id: this.props.user,
+    }
+    this.props.createComment(com)
   }
 
   render () {
@@ -37,4 +41,4 @@ class CommentForm extends React.Component {
   }
 }
 
-export default CommentIndex;
+export default CommentForm;

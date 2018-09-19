@@ -15,9 +15,10 @@ end
 json.set! 'comments' do
   @workout.comments.each do |comment|
     json.set! comment.id do
-      json.extract! comment, :body, :run_id, :author_id
+      json.extract! comment, :body, :run_id, :author_id, :created_at, :id
       json.fname comment.author.fname
       json.lname comment.author.lname
+
     end
   end
 end

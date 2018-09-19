@@ -2,7 +2,7 @@
   width: 625px;
   display: flex;
   flex-direction: column;
-  margin-top: 45px;
+  margin-top: 30px;
 }
 
 #comments-create{
@@ -40,6 +40,7 @@
 }
 
 #comment-name{
+  width: 150px;
   color: #2F98D9;
 }
 
@@ -49,7 +50,7 @@
 
 #comment-delete-time{
   display: flex;
-  justify-content: flex-end;
+  margin-left: auto;
 }
 
 #comment-delete{
