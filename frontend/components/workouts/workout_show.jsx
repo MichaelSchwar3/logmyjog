@@ -10,9 +10,7 @@ class WorkoutShow extends React.Component {
   }
 
   componentDidMount() {
-    // if(!this.props.workout){
       this.props.fetchWorkout(this.props.match.params.workoutId)
-    // }
   }
 
   componentDidUpdate(nextProps) {

@@ -97,7 +97,7 @@ class RunMap extends React.Component{
       run_map: this.state.polyline,
       name: this.state.name,
     })
-    this.props.history.push('/workouts');
+    this.props.history.push('/routes/my_routes');
   }
   render() {
     return(

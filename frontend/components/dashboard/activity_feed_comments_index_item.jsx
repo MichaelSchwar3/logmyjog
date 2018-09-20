@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { formatDate } from '../../util/date_util';
 
-class CommentIndexItem extends React.Component {
+class ActivityFeedCommentsIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this)
@@ -10,7 +10,6 @@ class CommentIndexItem extends React.Component {
   handleClick(){
     this.props.deleteComment(this.props.comment.id)
   }
-
   render(){
     if(!this.props.comment) return null;
     return (
@@ -42,4 +41,4 @@ class CommentIndexItem extends React.Component {
 }
 
 
-export default CommentIndexItem;
+export default ActivityFeedCommentsIndexItem;

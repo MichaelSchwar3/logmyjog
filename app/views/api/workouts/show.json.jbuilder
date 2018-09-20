@@ -18,7 +18,6 @@ json.set! 'comments' do
       json.extract! comment, :body, :run_id, :author_id, :created_at, :id
       json.fname comment.author.fname
       json.lname comment.author.lname
-
     end
   end
 end
