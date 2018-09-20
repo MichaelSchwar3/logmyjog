@@ -8,6 +8,7 @@ class Run < ApplicationRecord
 
   has_many :workouts,
     foreign_key: :run_id,
-    class_name: :Workout
+    class_name: :Workout,
+    dependent: :destroy
 
 end

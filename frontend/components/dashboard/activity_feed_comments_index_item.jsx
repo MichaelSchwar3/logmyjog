@@ -12,6 +12,13 @@ class ActivityFeedCommentsIndexItem extends React.Component {
   }
   render(){
     if(!this.props.comment) return null;
+    let button;
+    if(this.props.comment.authorId === this.props.user){
+      button = <button onClick={this.handleClick}>Delete</button>
+    }else{
+      button = ""
+    }
+
     return (
       <div id="comment-item">
         <div id="comment-icon">
@@ -29,10 +36,10 @@ class ActivityFeedCommentsIndexItem extends React.Component {
         </div>
         <div id="comment-delete-time">
           <div id="comment-delete">
-            <button onClick={this.handleClick}>Delete</button>
+            {button}
           </div>
           <div id="comment-time">
-            {formatDate(this.props.comment.createdAt)}
+            &nbsp;|&nbsp;{formatDate(this.props.comment.createdAt)}
           </div>
         </div>
       </div>

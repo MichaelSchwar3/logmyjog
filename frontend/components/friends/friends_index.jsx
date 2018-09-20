@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import FriendIndexItem from './friend_index_item';
 
 class FriendIndex extends React.Component {
@@ -31,12 +31,6 @@ class FriendIndex extends React.Component {
         friend.friender_id !== this.props.currentUserId)
     return (
       <div className="friends-index">
-        <div id="friends-index-head">
-          MY FRIENDS
-        </div>
-        <div id="friends-index-tabs">
-          <span>My Friends</span><span>Find Friends</span>
-        </div>
         <div id="friends-index-body">
           <div id="friends-index-count">
             Friend Requests ({pendingIncomingFriends.length})

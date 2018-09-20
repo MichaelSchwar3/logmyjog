@@ -1,0 +1,36 @@
+#dash-nav-bar-parent{
+  width: 960px;
+  margin-left: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #D1D0CF;
+  color: #0469B2;
+}
+
+#dash-nav-bar{
+  display: flex;
+  height: 45px;
+}
+
+.dash-nav-box{
+  border-right: 1px solid #D1D0CF;
+  border-top: 1px solid #D1D0CF;
+  border-bottom: 3px solid #FFFFFF;
+  width: 262px;
+  font-size: 20px;
+  padding-top: 5px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.active{
+  border-top: 3px solid #2AA5EF;
+  border-bottom: 0px;
+  border-left: 0px;
+  height: 44px;
+  box-sizing: border-box;
+}
+
+#dash-nav-dashboard{
+  border-left: 1px solid #D1D0CF;
+}

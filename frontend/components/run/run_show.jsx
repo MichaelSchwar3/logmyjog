@@ -2,21 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class RunShow extends React.Component {
-
+  constructor(props){
+    super(props);
+    this.handleClick = this.handleClick.bind(this)
+  }
   componentDidMount() {
     if(!this.props.run){
       this.props.fetchRun(this.props.match.params.runId)
     }
   }
-
-  componentWillReceiveProps(nextProps) {
-  if (this.props.match.params.runId !== nextProps.match.params.runId) {
-    this.props.fetchRun(nextProps.match.params.runId);
+  handleClick(){
+    this.props.deleteRun(this.props.run.id)
+    this.props.history.push('/routes/my_routes')
   }
-}
-
   render () {
-    const run = this.props.run || {name: "", location: "" ,distance:0}
+    const run = this.props.run || {fname: "", lname:"" ,location: "" ,distance:0}
     return (
       <div className="runs-show">
         <section id="runs-show-left">
@@ -26,7 +26,7 @@ class RunShow extends React.Component {
           <div id="runs-show-details">
             <div id="runs-show-distance">
               <span id="distance">DISTANCE</span>
-              <div>{run.distance.toFixed(3)}</div>
+              <div>{run.distance.toFixed(2)}</div>
               <span id="miles">miles</span>
             </div>
             <div id="runs-show-description">
@@ -35,7 +35,7 @@ class RunShow extends React.Component {
             </div>
             <div id="runs-show-description">
               {run.location}<br/>
-              {run.fname} {run.lname}
+              {run.fname}&nbsp;{run.lname}
             </div>
           </div>
           <div id="runs-show-map">
@@ -43,21 +43,27 @@ class RunShow extends React.Component {
           </div>
         </section>
         <section id="runs-show-right">
-          <div className="runs-show-button" id="runs-show-create">
-            Create A Route
-          </div>
+          <Link to='/routes/create'>
+            <div className="runs-show-button" id="runs-show-create">
+              Create A Route
+            </div>
+          </Link>
           <div className="runs-show-button" id="runs=show-edit">
             Edit Route
           </div>
-          <div className="runs-show-button" id="runs-show-delete">
+          <button className="runs-show-button" id="runs-show-delete" onClick={this.handleClick}>
             Delete Route
-          </div>
-          <div className="runs-show-button" id="runs-show-log">
-            Log This Workout
-          </div>
-          <div id="runs-show-index">
-            Back to My Routes
-          </div>
+          </button>
+          <Link to='/workouts/create/'>
+            <div className="runs-show-button" id="runs-show-log">
+              Log A Workout
+            </div>
+          </Link>
+          <Link to='/routes/my_routes'>
+            <div id="runs-show-index">
+              Back to My Routes
+            </div>
+          </Link>
         </section>
       </div>
     );

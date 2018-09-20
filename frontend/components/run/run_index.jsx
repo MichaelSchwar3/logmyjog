@@ -35,7 +35,9 @@ class RunIndex extends React.Component {
           </thead>
           <tbody>
             {this.props.runs.map( run =>{
-              return <RunIndexItem run={run} key={`run-${run.id}`}/>;
+              if(run && run.runnerId === this.props.user){
+                return <RunIndexItem run={run} key={`run-${run.id}`}/>;
+              }
             })}
           </tbody>
         </table>

@@ -36,9 +36,9 @@ class RunMap extends React.Component{
         handleLocationError(false, infoWindow, map.getCenter())
     }
     let poly = new google.maps.Polyline({
-    strokeColor: '#000000',
+    strokeColor: '#c30606',
     strokeOpacity: 1.0,
-    strokeWeight: 3
+    strokeWeight: 4
     });
     poly.setMap(map);
     let service = new google.maps.DirectionsService();
@@ -58,7 +58,7 @@ class RunMap extends React.Component{
         service.route({
           origin: path.getAt(path.getLength() - 1),
           destination: evt.latLng,
-          travelMode: google.maps.DirectionsTravelMode.DRIVING
+          travelMode: google.maps.DirectionsTravelMode.WALKING
         }, function(result, status) {
           if (status == google.maps.DirectionsStatus.OK) {
             for (var i = 0, len = result.routes[0].overview_path.length;
@@ -100,6 +100,12 @@ class RunMap extends React.Component{
     this.props.history.push('/routes/my_routes');
   }
   render() {
+    let distance;
+    if(this.state.distance){
+      distance = this.state.distance
+    }else{
+      distance = 0
+    }
     return(
       <div id="map-main">
         <section id="map-sidebar">
@@ -117,6 +123,10 @@ class RunMap extends React.Component{
                 </label>
                 <input id="route-submit" type="submit" value="Save Route"/>
               </form>
+              <aside id="map-show-distance">
+                <span id="map-show-distance-distance">DISTANCE</span>
+                <span>{distance.toFixed(2)}&nbsp;mi</span>
+              </aside>
             </div>
           </div>
         </section>

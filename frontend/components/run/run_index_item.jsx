@@ -12,7 +12,7 @@ const RunIndexItem = props => {
 ?size=80x80&path=weight:3%7Ccolor:red%7Cenc:${props.run.runMap}&key=${window.apiKey}`}/></Link>
       </td>
       <td className="run-td" id="run-time"><Link to={`/routes/views/${props.run.id}`}>{formatDate(props.run.createdAt)}</Link></td>
-      <td className="run-td" id="run-distance">{(props.run.distance).toFixed(3)} miles</td>
+      <td className="run-td" id="run-distance">{(props.run.distance).toFixed(2)} miles</td>
       <td className="run-td" id="run-duration">Used to be duration</td>
       <td className="run-td" id="run-name"><Link to={`/routes/views/${props.run.id}`}>{props.run.name}</Link></td>
       <td className="run-td" id="run-location">{props.run.location}</td>

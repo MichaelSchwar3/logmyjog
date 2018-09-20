@@ -10,23 +10,28 @@ class User < ApplicationRecord
   has_many :runs,
     foreign_key: :runner_id,
     primary_key: :id,
-    class_name: :Run
+    class_name: :Run,
+    dependent: :destroy
 
   has_many :friendees,
     foreign_key: :friendee_id,
-    class_name: :Friend
+    class_name: :Friend,
+    dependent: :destroy
 
   has_many :frienders,
     foreign_key: :friender_id,
-    class_name: :Friend
+    class_name: :Friend,
+    dependent: :destroy
 
   has_many :workouts,
     foreign_key: :user_id,
-    class_name: :Workout
+    class_name: :Workout,
+    dependent: :destroy
 
   has_many :comments,
     foreign_key: :author_id,
-    class_name: :Comment
+    class_name: :Comment,
+    dependent: :destroy
 
 
   def self.find_by_credentials(email, password)

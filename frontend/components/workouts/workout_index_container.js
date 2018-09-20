@@ -3,7 +3,8 @@ import WorkoutIndex from './workout_index';
 import { fetchWorkouts } from '../../actions/workout_actions';
 
 const mapStateToProps = state => ({
-  workouts: Object.values(state.entities.workouts)
+  workouts: Object.values(state.entities.workouts),
+  user: state.session.currentUserId
 });
 
 const mapDispatchToProps = dispatch => ({

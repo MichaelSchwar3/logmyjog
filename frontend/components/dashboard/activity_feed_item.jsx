@@ -23,7 +23,7 @@ class ActivityFeedItem extends React.Component {
             <div id="af-item-info-name-dist">
               <span id="name">
                 <Link to={`/workouts/`}>{workout.workoutCreatorFName}
-                {workout.workoutCreatorLName}</Link>
+                 &nbsp;{workout.workoutCreatorLName}</Link>
                 &nbsp;ran {workout.distance.toFixed(2)}&nbsp;miles
               </span>
               <span id="description">
@@ -33,11 +33,11 @@ class ActivityFeedItem extends React.Component {
           </section>
           <section id="af-info-middle">
             <div id="af-distance">
-              <div><i class="fas fa-road"></i><br/>Distance</div>
+              <div><i className="fas fa-road"></i><br/>Distance</div>
               <div>{workout.distance}&nbsp;<span>mi</span></div>
             </div>
             <div id="af-pace">
-              <div><i class="far fa-clock"></i><br/>Pace</div>
+              <div><i className="far fa-clock"></i><br/>Pace</div>
               {formatPace(workout.duration, workout.distance)}&nbsp;<span>min/mi</span>
             </div>
             <div id="af-map">

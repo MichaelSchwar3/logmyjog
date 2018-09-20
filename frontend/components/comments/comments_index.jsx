@@ -15,8 +15,9 @@ class CommentIndex extends React.Component {
         </div>
         <div id="comment-items">
             {this.props.comments.map( comment =>{
-              return <CommentIndexItem comment={comment}  
+              return <CommentIndexItem comment={comment}
               deleteComment={this.props.deleteComment}
+              user={this.props.user}
               key={`comment-${comment.id}`}/>;
             })}
         </div>

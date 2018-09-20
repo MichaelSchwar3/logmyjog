@@ -6,7 +6,7 @@ const Nav = () => {
     <div id="nav-bar-parent">
       <div id="nav-bar">
         <div className="nav-box" id="nav-dashboard">
-          <Link to="/workouts">My Dashboard</Link>
+          <Link to="/my_home/activity_feed">My Dashboard</Link>
         </div>
         <div className="nav-box" id="nav-create">
           <Link to="/routes/create">Create Route</Link>

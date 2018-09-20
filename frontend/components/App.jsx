@@ -13,6 +13,8 @@ import MapContainer from './map/map_container';
 import SplashContainer from './splash/splash_container';
 import Footer from './footer/footer';
 import Nav from './nav/nav';
+import NavDash from './dashboard/dashboard-nav';
+import FriendsNav from './friends/friends-nav';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Link, Switch } from 'react-router-dom';
 
@@ -28,6 +30,10 @@ const App = () => (
     <ProtectedRoute path ='/people/' component={Nav}/>
     <ProtectedRoute path ='/routes/my_routes/' component={Nav}/>
     <ProtectedRoute path ='/my_home/activity_feed/' component={Nav}/>
+    <ProtectedRoute path ='/my_home/activity_feed/' component={NavDash}/>
+    <ProtectedRoute path ='/routes/my_routes' component={NavDash}/>
+    <ProtectedRoute path ='/workouts/' component={NavDash}/>
+    <ProtectedRoute path ='/people/' component={FriendsNav}/>
     <ProtectedRoute path ='/my_home/activity_feed/' component={ActivityFeedContainer}/>
     <ProtectedRoute exact path='/routes/create' component={MapContainer} />
     <ProtectedRoute exact path='/routes/views/:runId' component={RunShowContainer} />

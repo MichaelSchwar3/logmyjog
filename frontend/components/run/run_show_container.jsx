@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import RunShow from './run_show';
-import { fetchRun } from '../../actions/run_actions';
+import { fetchRun, deleteRun } from '../../actions/run_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return(
@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchRun: (id)=> dispatch(fetchRun(id)),
+  deleteRun: (runId)=> dispatch(deleteRun(runId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RunShow);

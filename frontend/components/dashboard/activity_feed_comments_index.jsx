@@ -19,6 +19,7 @@ class ActivityFeedCommentsIndex extends React.Component {
               if(comment.runId === this.props.workout.id){
                 return <ActivityFeedCommentsIndexItem comment={comment}
               deleteComment={this.props.deleteComment}
+              user={this.props.user}
               key={`comment-${comment.id}`}/>}
             })}
         </div>

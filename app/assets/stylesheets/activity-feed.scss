@@ -34,7 +34,7 @@
 #af-info-top{
   width: 560px;
   background-color: #FFFFFF;
-  height: 85px;
+  height: 60px;
   color: black;
   border: 1px solid #CDCDCD;
 }
@@ -113,6 +113,10 @@
   border-top: 0px;
   border-bottom: 0px;
   box-sizing: border-box;
+}
+#af-info-comments #comment-items{
+  width: 560px;
+  margin-top: 0px;
 }
 
 #af-info-comments #comments-form{

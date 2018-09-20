@@ -16,12 +16,14 @@ class WorkoutIndex extends React.Component {
     return (
       <div className="workouts-index">
         <div id="workouts-create">
-          <span>My Workouts</span>
-          <Link to="/workouts/create/"><button id="workouts-create-workout">Create a Route</button></Link>
+          <span>MY WORKOUTS</span>
+          <Link to="/workouts/create/"><button id="workouts-create-workout">LOG A WORKOUT</button></Link>
         </div>
         <div id="workout-items">
             {this.props.workouts.map( workout =>{
-              return <WorkoutIndexItem workout={workout} key={`workout-${workout.id}`}/>;
+              if(workout.workout.userId === this.props.user){
+              return <WorkoutIndexItem workout={workout} key={`workout-${workout.workout.id}`}/>;
+            }
             })}
         </div>
       </div>
