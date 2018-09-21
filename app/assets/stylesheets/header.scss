@@ -54,9 +54,12 @@ header img{
   display: flex;
   margin-left: auto;
   width: 100px;
-  // padding-left: 150px;
   justify-content: space-around;
   align-items: center;
+}
+
+#greeting-container-logged-in{
+  width: 100%
 }
 
 #greeting{
@@ -64,8 +67,10 @@ header img{
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
-  width:100%;
+  width: 960px;
+  margin: auto;
 }
+
 
 #greeting span{
   color: #9A9EA9;

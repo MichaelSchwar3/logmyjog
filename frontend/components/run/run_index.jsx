@@ -26,10 +26,9 @@ class RunIndex extends React.Component {
               <th>Run Map</th>
               <th>Created At</th>
               <th>Distance </th>
-              <th>Duration</th>
               <th>Name </th>
               <th>Location</th>
-              <th>Completed</th>
+              <th>Privacy</th>
               <th>Options</th>
             </tr>
           </thead>

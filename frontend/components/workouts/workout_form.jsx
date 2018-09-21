@@ -63,7 +63,9 @@ class WorkoutForm extends React.Component {
                   <option selected="selected" disabled>--Please Choose a Route--</option>
                   {runs.map( run =>{
                     if(!run.distance) return null;
-                    return <option onClick={this.update('run_id')} id="workout-form-option" value={run.id}>
+                    return <option onClick={this.update('run_id')}
+                    key={`run-${run.id}`}
+                    id="workout-form-option" value={run.id}>
                       {run.name}-{(run.distance).toFixed(2)} miles
                     </option>
                   })}

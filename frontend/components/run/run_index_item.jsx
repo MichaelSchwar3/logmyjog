@@ -13,10 +13,9 @@ const RunIndexItem = props => {
       </td>
       <td className="run-td" id="run-time"><Link to={`/routes/views/${props.run.id}`}>{formatDate(props.run.createdAt)}</Link></td>
       <td className="run-td" id="run-distance">{(props.run.distance).toFixed(2)} miles</td>
-      <td className="run-td" id="run-duration">Used to be duration</td>
       <td className="run-td" id="run-name"><Link to={`/routes/views/${props.run.id}`}>{props.run.name}</Link></td>
       <td className="run-td" id="run-location">{props.run.location}</td>
-      <td className="run-td" id="run-completion">Filler</td>
+      <td className="run-td" id="run-completion">Public</td>
       <td className="run-td" id="run-option">Options</td>
     </tr>
 )};
