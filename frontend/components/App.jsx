@@ -5,6 +5,7 @@ import SignupFormContainer from './session/signup_form_container';
 import RunIndexContainer from './run/run_index_container';
 import RunShowContainer from './run/run_show_container';
 import FriendsIndexContainer from './friends/friends_index_container';
+import FindFriends from './friends/find_friends';
 import WorkoutIndexContainer from './workouts/workout_index_container';
 import WorkoutFormContainer from './workouts/workout_form_container';
 import WorkoutShowContainer from './workouts/workout_show_container';
@@ -38,6 +39,7 @@ const App = () => (
     <ProtectedRoute exact path='/routes/views/:runId' component={RunShowContainer} />
     <ProtectedRoute exact path='/routes/my_routes' component={RunIndexContainer} />
     <ProtectedRoute exact path='/people/friends' component={FriendsIndexContainer} />
+    <ProtectedRoute exact path='/people/friends/find' component={FindFriends} />
     <ProtectedRoute exact path='/workouts/create/' component={WorkoutFormContainer} />
     <ProtectedRoute exact path='/workouts/views/:workoutId/' component={WorkoutShowContainer} />
     <ProtectedRoute exact path='/workouts/' component={WorkoutIndexContainer} />
