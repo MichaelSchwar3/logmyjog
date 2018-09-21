@@ -8,20 +8,50 @@ Inspired by MapMyRun, LogMyJog is a full-stack web application that is intended 
 
 LogMyJog was built using a Rails backend framework, Postgres SQL for the database, and React Javascript for the front end using the Redux framework.
 
-##Map Routing
+## Map Routing
 
 LogMyJog allows a Jogger to be able to map out a run anywhere on the globe. Using Google Maps API V3, Joggers are able to click on a map as many times as they choose. A distance counter is kept on the left-hand side so they can track how far their run is at any point. Once the Joggers have completed their desired route, they can save the route in their profile so that it can be used to log future workouts.
 
-https://giphy.com/gifs/7NG9lEs9UXxKGEvYTM
 ![alt text]("https://giphy.com/gifs/7NG9lEs9UXxKGEvYTM")
 
-The routes stored into the database by encoding the Polyline created by the API and storing as a string inside the database. The string can then be decoded in the future when the route needs to be referenced again. They are associated with the Jogger who created the route using `runner_id` as the foreign key
+The routes stored into the database by encoding the Polyline created by the API and storing as a string inside the database. The string can then be decoded in the future when the route needs to be referenced again. They are associated with the Jogger who created the route using `runner_id` as the foreign key. Additionally, info is extracted and saved using Google's API Methods
 
 ```
+let encodeString = google.maps.geometry.encoding.encodePath(path);
+let lengthInMeters = google.maps.geometry.spherical.computeLength(path);
+let decodePath = google.maps.geometry.encoding.decodePath(encodeString)
+this.setState({
+  polyline: encodeString,
+  distance: (lengthInMeters * 0.000621371)
+})
 
 ```
 
 An additional feature built into LogMyJog’s route creation is the locational services. When opening LogMyJog’s route creation tool for the first time, Joggers are prompted to “allow” locational services. If allowed, the map will detect the Jogger’s location and zoom into that location as a starting point. The Jogger is able to zoom out at any point and change this location. If locational services are not allowed, the map will default to central Manhattan, NY.
+
+```
+let map, infoWindow;
+map = new google.maps.Map(this.mapNode,{
+  center: {lat: 40.7831, lng: 73.9712},
+  zoom: 15
+})
+infoWindow = new google.maps.InfoWindow;
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    let pos = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    };
+    infoWindow.setPosition(pos);
+    infoWindow.setContent('Location found.');
+    infoWindow.open(map);
+    map.setCenter(pos);
+  }, function() {
+    handleLocationError(true, infoWindow, map.getCenter())
+  })} else {
+    handleLocationError(false, infoWindow, map.getCenter())
+}
+```
 
 ## Activity Feed
 
