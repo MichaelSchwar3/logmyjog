@@ -11,7 +11,7 @@ class ActivityFeedItem extends React.Component {
 
   render(){
     if(!this.props.payload) return null;
-    const workout = this.props.payload.workout
+    const workout = this.props.payload
     const run = this.props.payload.run
     return(
       <div id="af-item">
@@ -25,12 +25,14 @@ class ActivityFeedItem extends React.Component {
                 <Link to={`/workouts/`}>{workout.workoutCreatorFName}
                  &nbsp;{workout.workoutCreatorLName}</Link>
                 &nbsp;ran {workout.distance.toFixed(2)}&nbsp;miles
+                <span id="created-at">{formatDate(workout.createdAt)}</span>
               </span>
               <span id="description">
                 {workout.description}
               </span>
             </div>
           </section>
+          <Link to={`/workouts/views/${workout.id}`}>
           <section id="af-info-middle">
             <div id="af-distance">
               <div><i className="fas fa-road"></i><br/>Distance</div>
@@ -44,6 +46,7 @@ class ActivityFeedItem extends React.Component {
               <img src={`https://maps.googleapis.com/maps/api/staticmap?size=185x155&path=weight:3%7Ccolor:red%7Cenc:${run.runMap}&key=${window.apiKey}`}/>
             </div>
           </section>
+          </Link>
           <section id="af-info-comments">
             <ActivityFeedCommentContainer workout={workout}/>;
           </section>

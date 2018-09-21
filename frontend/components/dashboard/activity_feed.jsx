@@ -8,13 +8,15 @@ class ActivityFeed extends React.Component {
     this.props.fetchWorkouts()
   }
   render () {
+    if(!this.props.workouts) return null;
+    const payload = this.props.workouts.reverse()
     return (
       <div className="af-container">
         <div id="af-item-container">
           {this.props.workouts.map( payload =>{
             return <ActivityFeedItem payload={payload}
             comments={this.props.comments}
-            key={`payload-${payload.workout.id}`}/>;
+            key={`payload-${payload.id}`}/>;
           })}
         </div>
       </div>

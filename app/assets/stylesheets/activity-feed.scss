@@ -4,20 +4,24 @@
 
 #af-tabs{
   width: 960px;
+  margin:auto;
 }
 
 #af-item-container{
   margin-bottom: 25px;
+  width: 100%;
 }
 
 #af-item{
   width: 620px;
-  margin-left: 25px;
+  margin: auto;
+  margin-right: auto;
   display: flex;
   align-items: flex-start;
   margin-bottom: 25px;
   padding-bottom: 25px;
   overflow: hidden;
+  padding-right: 340px;
 }
 
 #af-item-icon{
@@ -46,8 +50,15 @@
   flex-direction: column;
 }
 
+#af-info-top #name{
+  display: flex;
+}
 #af-info-top #name a{
   color: #2F98D9;
+}
+#af-info-top #created-at{
+  margin-left: auto;
+  padding-right: 5px;
 }
 
 #af-info-top #description{

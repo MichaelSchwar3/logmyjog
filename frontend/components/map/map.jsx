@@ -92,7 +92,7 @@ class RunMap extends React.Component{
     e.preventDefault();
     this.props.createRun({
       location: this.state.location,
-      distance: this.state.distance,
+      distance: this.state.distance.toFixed(2),
       runner_id: this.props.currentUserId,
       run_map: this.state.polyline,
       name: this.state.name,

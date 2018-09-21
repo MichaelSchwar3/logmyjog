@@ -17,7 +17,7 @@ class RunIndex extends React.Component {
     return (
       <div className="runs-index">
         <div id="runs-create">
-          <span>My Routes</span>
+          <span>MY ROUTES</span>
           <Link to="/routes/create/"><button id="runs-create-run">Create a Route</button></Link>
         </div>
         <table>

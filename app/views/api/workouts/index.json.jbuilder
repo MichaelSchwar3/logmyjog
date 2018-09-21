@@ -1,13 +1,10 @@
 json.key_format! camelize: :lower
 @workouts.each do |workout|
   json.set! workout.id do
-
-    json.set! 'workout' do
        json.partial! "api/workouts/workout", workout: workout
        json.workoutCreatorFName workout.user.fname
        json.workoutCreatorLName workout.user.lname
        json.workoutCreatorId workout.user.id
-     end
 
      json.set! 'run' do
        json.extract! workout.route, :run_map, :name, :created_at, :id

@@ -6,6 +6,7 @@ const Greeting = ({currentUser, logout}) => {
     return(
       <div id="greeting">
         <nav id="nav-id">
+          <Link to="/"><img src={window.logoUrl}/></Link>
           <div className="nav nav-hover" id="routes">
             Routes
             <ul className="header-notifications">

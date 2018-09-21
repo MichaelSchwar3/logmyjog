@@ -22,7 +22,6 @@ import { Route, Link, Switch } from 'react-router-dom';
 const App = () => (
   <div>
     <header>
-      <Link to="/"><img src={window.logoUrl}/></Link>
       <Route path='/' component={GreetingContainer} />
     </header>
     <AuthRoute exact path='/' component={SplashContainer} />

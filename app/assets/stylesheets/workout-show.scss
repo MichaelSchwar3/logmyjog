@@ -1,9 +1,10 @@
 .workout-show{
-  width: 940px;
+  width: 960px;
+
   background-color: #FFFFFF;
   color: #999999;
+  margin: auto;
   margin-top: 40px;
-  margin-left: 25px;
 }
 
 #workout-show-info{
@@ -12,6 +13,10 @@
   height: 210px;
   border: 1px solid #C3C2C2;
   margin-bottom: 20px;
+}
+
+#wsi-head{
+  margin: auto;
 }
 
 #wsi-head-title{
@@ -23,6 +28,7 @@
 #wsi-head-body{
   padding-left: 15px;
   width: 630px;
+  margin: auto;
   height: 65px;
   display: flex;
   align-items: center;
@@ -105,6 +111,15 @@
   width: 630px;
   height: 395px;
   border: 1px solid #C3C2C2;
+}
+
+#workout-show-map{
+  width: 100%;
+}
+
+#wsi-middle{
+  width: 960px;
+  margin: auto;
 }
 
 #wsi-middle-map-left{

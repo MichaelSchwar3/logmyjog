@@ -30,32 +30,34 @@ class FriendIndex extends React.Component {
       friend => friend.accepted !== true &&
         friend.friender_id !== this.props.currentUserId)
     return (
-      <div className="friends-index">
-        <div id="friends-index-body">
+      <div id="friend-container">
+        <div className="friends-index">
+          <div id="friends-index-body">
+            <div id="friends-index-count">
+              Friend Requests ({pendingIncomingFriends.length})
+            </div>
+            <div id="friends-index-pending-incoming">
+              {pendingIncomingFriends.map( friend =>{
+                return <FriendIndexItem friend={friend}
+                 key={`friend-${friend.id}`}
+                 text="Accept" action={this.props.updateFriend}
+                 deleteFriend={this.props.deleteFriend}
+                 userId={this.props.currentUserId}/>;
+              })}
+            </div>
+          </div>
           <div id="friends-index-count">
-            Friend Requests ({pendingIncomingFriends.length})
+            Friends {acceptedFriends.length} of {acceptedFriends.length}
           </div>
-          <div id="friends-index-pending-incoming">
-            {pendingIncomingFriends.map( friend =>{
-              return <FriendIndexItem friend={friend}
-               key={`friend-${friend.id}`}
-               text="Accept" action={this.props.updateFriend}
-               deleteFriend={this.props.deleteFriend}
-               userId={this.props.currentUserId}/>;
-            })}
-          </div>
-        </div>
-        <div id="friends-index-count">
-          Friends {acceptedFriends.length} of {acceptedFriends.length}
-        </div>
-        <div id="friends-index-body">
-          <div id="friends-index-accepted">
-            {acceptedFriends.map( friend =>{
-              return <FriendIndexItem friend={friend}
-              key={`friend-${friend.id}`} text="Unfriend"
-              action={this.props.deleteFriend}
-              userId={this.props.currentUserId}/>;
-            })}
+          <div id="friends-index-body">
+            <div id="friends-index-accepted">
+              {acceptedFriends.map( friend =>{
+                return <FriendIndexItem friend={friend}
+                key={`friend-${friend.id}`} text="Unfriend"
+                action={this.props.deleteFriend}
+                userId={this.props.currentUserId}/>;
+              })}
+            </div>
           </div>
         </div>
       </div>

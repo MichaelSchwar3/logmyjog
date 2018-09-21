@@ -13,6 +13,7 @@ class WorkoutIndex extends React.Component {
   }
 
   render () {
+    let user = this.props.user
     return (
       <div className="workouts-index">
         <div id="workouts-create">
@@ -21,8 +22,8 @@ class WorkoutIndex extends React.Component {
         </div>
         <div id="workout-items">
             {this.props.workouts.map( workout =>{
-              if(workout.workout.userId === this.props.user){
-              return <WorkoutIndexItem workout={workout} key={`workout-${workout.workout.id}`}/>;
+              if(workout.userId === user){
+              return <WorkoutIndexItem workout={workout} key={`workout-${workout.id}`}/>;
             }
             })}
         </div>

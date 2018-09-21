@@ -1,8 +1,7 @@
 .runs-index{
-  width: 1050px;
+  width: 100%;
   margin: auto;
   margin-top: 20px;
-  margin-left: 25px;
   margin-right: 25px;
   display: flex;
   flex-direction: column;
@@ -13,7 +12,7 @@
 }
 
 .runs-index table{
-  width: 1050px;
+  width: 960px;
   border-spacing: 0px;
   margin: auto;
 }
@@ -42,11 +41,11 @@ td,th{
 }
 
 #runs-create{
-  width: 1050px;
+  width: 960px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
-  margin-left: 5px;
   font-size: 22px;
   color: black;
   margin-bottom: 25px;
@@ -77,6 +76,7 @@ td,th{
 
 .run-td a{
   color: blue;
+  font-size: 14px;
 }
 
 #run-map{
@@ -92,6 +92,7 @@ td,th{
 #run-distance{
   width: 130px;
   box-sizing: border-box;
+  font-size: 14px;
 }
 
 #run-duration{

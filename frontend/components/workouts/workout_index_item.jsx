@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { formatDate } from '../../util/date_util';
 
 const WorkoutIndexItem = props => {
-  if(!props.workout.workout) return null;
-  const workout = props.workout.workout
+  if(!props.workout) return null;
+  const workout = props.workout
   return (
     <div id="workout-item">
       <div id="workout-item-bg"><img src={window.runningManUrl}/></div>

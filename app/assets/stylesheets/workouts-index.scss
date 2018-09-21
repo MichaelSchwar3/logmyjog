@@ -1,8 +1,7 @@
 .workouts-index{
-  width: 960px;
+  width: 100%;
   margin: auto;
   margin-top: 20px;
-  margin-left: 25px;
   margin-right: 25px;
   display: flex;
   flex-direction: column;
@@ -13,10 +12,10 @@
 }
 
 #workouts-create{
-  // width: 1050px;
+  width: 960px;
+  margin: auto;
   display: flex;
   margin-top: 30px;
-  margin-left: 5px;
   font-size: 22px;
   color: black;
   padding-bottom: 10px;
@@ -43,6 +42,8 @@
 #workout-items{
   display: flex;
   flex-wrap: wrap;
+  width: 960px;
+  margin: auto;
 }
 
 #workout-item{
