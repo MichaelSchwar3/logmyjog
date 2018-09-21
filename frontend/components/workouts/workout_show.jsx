@@ -58,7 +58,7 @@ class WorkoutShow extends React.Component {
               </div>
             </div>
             <div id="wsi-head-buttons">
-              <Link to={`/workouts/edit/${workout.id}`}><button id="wsi-edit">EDIT</button></Link>
+              <Link to={`/workouts/views/${workout.id}`}><button id="wsi-edit">EDIT</button></Link>
               <button id="wsi-delete" onClick={this.handleDelete}>DELETE</button>
             </div>
           </div>
