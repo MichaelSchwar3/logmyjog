@@ -1,6 +1,6 @@
  ![alt text](/app/assets/images/logmyjog.png "LogMyJog")
 
-[I'm an inline-style link with title](https://logmyjog.herokuapp.com/ "LogMyJog")
+[Log My Jog - Live](https://logmyjog.herokuapp.com/ "LogMyJog")
 
 Inspired by MapMyRun, LogMyJog is a full-stack web application that is intended to allow Joggers (users) to map out their Jogs prior to going out in the world and jogging. Joggers can then log workouts against those saved Jogs and then share their Jogger activity with a community of other Joggers.
 
