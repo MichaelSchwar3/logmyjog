@@ -1,4 +1,4 @@
-# LogMyJog  ![alt text](https://github.com/MichaelSchwar3/logmyjog/blob/master/app/assets/images/logmyjog.png")
+# LogMyJog  ![alt text]("/app/assets/images/logmyjog.png")
 
 [I'm an inline-style link with title](https://logmyjog.herokuapp.com/ "LogMyJog")
 
@@ -6,7 +6,7 @@ Inspired by MapMyRun, LogMyJog is a full-stack web application that is intended 
 
 ## Technologies
 
-LogMyJog was built using a Rails backend framework, Postgres SQL for the database, and React Javascript for the front end using the Redux framework.
+LogMyJog was built using a Rails backend framework, PostgreSQL for the database, and React Javascript for the front end using the Redux framework.
 
 ## Map Routing
 
@@ -14,7 +14,7 @@ LogMyJog allows a Jogger to be able to map out a run anywhere on the globe. Usin
 
 ![alt text]("https://giphy.com/gifs/7NG9lEs9UXxKGEvYTM")
 
-The routes stored into the database by encoding the Polyline created by the API and storing as a string inside the database. The string can then be decoded in the future when the route needs to be referenced again. They are associated with the Jogger who created the route using `runner_id` as the foreign key. Additionally, info is extracted and saved using Google's API Methods
+The routes are stored into the database by encoding the Polyline created by the API and storing as a string inside the database. The string can then be decoded in the future when the route needs to be referenced again. They are associated with the Jogger who created the route using `runner_id` as the foreign key. Additionally, info is extracted and saved using Google's API Methods
 
 ```
 let encodeString = google.maps.geometry.encoding.encodePath(path);
@@ -57,7 +57,7 @@ if (navigator.geolocation) {
 
 Once Joggers have their routes in place, they can then log individual Jogs against any previously created routes. Once these Jogs have been logged, they will then appear on the Joggers’ activity feed. The activity feed displays all recently completed Jogs and various data associated with it. The Jogging community can then socialize by sending their praises or comments on the activity feed. All Joggers can comment on any Jog, however only the author of the comment is able to delete these comments. Additionally, using the React/Redux framework, the comments will show up and delete in real time.
 
-##Future Directions
+## Future Directions
 
 ### Finding Friends
 In LogMyJog’s near future, a friend finding feature will be implemented so that Joggers can search for other Joggers using First Name, Last Name or E-mail.

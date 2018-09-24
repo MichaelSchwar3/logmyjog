@@ -1,5 +1,7 @@
 class Comment < ApplicationRecord
 
+  validates :body
+
   belongs_to :workout,
     foreign_key: :run_id,
     class_name: :Workout

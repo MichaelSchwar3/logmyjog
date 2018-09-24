@@ -10,8 +10,8 @@ const Footer = () => {
       <div id="footer-social">
         <ul>
           <li>SOCIAL</li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Github</a></li>
+          <li><a href="https://www.linkedin.com/in/michael-schwartz-b8039b12/">LinkedIn</a></li>
+          <li><a href="https://github.com/MichaelSchwar3">Github</a></li>
           <li><a href="#">Facebook</a></li>
         </ul>
       </div>
