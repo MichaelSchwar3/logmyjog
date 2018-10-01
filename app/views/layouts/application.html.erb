@@ -4,6 +4,9 @@
     <title>LogMyJog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="icon"
+      type="image/png"
+      href="<%= faviconUrl %>">
     <link href="https://fonts.googleapis.com/css?family=Mukta+Malar" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -15,6 +18,7 @@
       window.backgroundUrl = "<%= image_url('background-splash2.png') %>"
       window.logoUrl = "<%= image_url('logmyjog.png') %>"
       window.runningManUrl = "<%= image_url('running-man.png') %>"
+      window.faviconUrl = "<%= image_url('favicon.png') %>"
       window.apiKey ="<%= Rails.application.credentials.google[:api_key] %>"
     </script>
 
