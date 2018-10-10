@@ -12,7 +12,7 @@ const Footer = () => {
           <li>SOCIAL</li>
           <li><a href="https://www.linkedin.com/in/michael-schwartz-b8039b12/">LinkedIn</a></li>
           <li><a href="https://github.com/MichaelSchwar3">Github</a></li>
-          <li><a href="#">Facebook</a></li>
+          <li><a href="https://angel.co/michael-schwartz-43">AngelList</a></li>
         </ul>
       </div>
       <div id="footer-help">
@@ -26,9 +26,9 @@ const Footer = () => {
       <div id="footer-about">
         <ul>
           <li>ABOUT ME</li>
-          <li><a href="#">NY Giants</a></li>
-          <li><a href="#">Athlinks</a></li>
-          <li><a href="#">Movies</a></li>
+          <li><a href="https://www.mschwartz.io">Portfolio Site</a></li>
+          <li><a href="https://www.athlinks.com/athletes/292342385">Athlinks</a></li>
+          <li><a href="https://www.newyorkcares.org/">New York Cares</a></li>
         </ul>
       </div>
     </div>

@@ -20,16 +20,19 @@ class CommentForm extends React.Component {
     }
   }
 
-  handleSubmit(){
-    const com = {
-      body: this.state.body,
-      run_id: this.props.workout.id,
-      author_id: this.props.user,
+  handleSubmit(e){
+    e.preventDefault();
+    if(this.state.body !== ""){
+      const com = {
+        body: this.state.body,
+        run_id: this.props.workout.id,
+        author_id: this.props.user,
+      }
+      this.props.createComment(com)
+      this.setState({
+        body: ""
+      })
     }
-    this.props.createComment(com)
-    this.setState({
-      body: ""
-    })
   }
 
   render () {

@@ -10,16 +10,17 @@ class WorkoutForm extends React.Component {
 
   }
   handleSubmit() {
-    this.props.createWorkout({
-      name: this.state.name,
-      description: this.state.description,
-      run_id: parseInt(this.state.run_id),
-      distance: this.props.runs[this.state.run_id].distance,
-      duration: formatDuration(parseInt(this.state.hours), parseInt(this.state.minutes), parseInt(this.state.seconds)),
-      user_id: parseInt(this.state.user_id),
-    })
-    this.props.history.push('/workouts');
+      this.props.createWorkout({
+        name: this.state.name,
+        description: this.state.description,
+        run_id: parseInt(this.state.run_id),
+        distance: this.props.runs[this.state.run_id].distance,
+        duration: formatDuration(parseInt(this.state.hours), parseInt(this.state.minutes), parseInt(this.state.seconds)),
+        user_id: parseInt(this.state.user_id),
+      })
+      this.props.history.push('/workouts');
   }
+
   update(field) {
     return e =>{
       this.setState({
