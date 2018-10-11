@@ -14,11 +14,15 @@ Comment.destroy_all
 
 users = User.create([
   {email: "Demo@gmail.com", fname: "Demo", lname: "User", password: "Testing123"},
+  {email: "Matt@gmail.com", fname: "Matt", lname: "Gershen", password: "Testing123"},
+  {email: "Raf@gmail.com", fname: "Raf", lname: "Garcia", password: "Testing123"},
+  {email: "Michelle@gmail.com", fname: "Michelle", lname: "Panzironi", password: "Testing123"},
+  {email: "Andre@gmail.com", fname: "Andre", lname: "Chow", password: "Testing123"},
   {email: "Demo1@gmail.com", fname: "Demo1", lname: "User", password: "Testing123"},
   {email: "Demo2@gmail.com", fname: "Demo2", lname: "User", password: "Testing123"},
   {email: "Demo3@gmail.com", fname: "Demo3", lname: "User", password: "Testing123"},
   {email: "Demo3@gmail.com", fname: "Demo3", lname: "User", password: "Testing123"},
-  {email: "Demo4@gmail.com", fname: "Demo4", lname: "User", password: "Testing123"},
+  {email: "Jean@gmail.com", fname: "Jean", lname: "Ha", password: "Testing123"},
   ])
 
 runs = Run.create([
@@ -29,25 +33,28 @@ runs = Run.create([
 
 
 friends = Friend.create([
-  {friender_id: User.first.id, friendee_id: User.second.id, accepted: true},
-  {friender_id: User.first.id, friendee_id: User.third.id, accepted: true},
-  {friender_id: User.second.id, friendee_id: User.third.id, accepted: true},
+  {friender_id: User.second.id, friendee_id: User.first.id, accepted: false},
   {friender_id: User.third.id, friendee_id: User.first.id, accepted: false},
   {friender_id: User.fourth.id, friendee_id: User.first.id, accepted: false},
-  {friender_id: User.first.id, friendee_id: User.fifth.id, accepted: false},
+  {friender_id: User.fifth.id, friendee_id: User.first.id, accepted: false},
+  {friender_id: User.last.id, friendee_id: User.first.id, accepted: false},
+  {friender_id: User.second.id, friendee_id: User.third.id, accepted: false},
+  {friender_id: User.forth.id, friendee_id: User.third.id, accepted: false},
+  {friender_id: User.fifth.id, friendee_id: User.third.id, accepted: false},
+  {friender_id: User.last.id, friendee_id: User.third.id, accepted: false},
   ])
 
 workouts = Workout.create([
-    {name: "Workout 1", description: "Description here", user_id: User.first.id, run_id: Run.first.id, distance: Run.first.distance, duration: 3623},
-    {name: "Workout 2", description: "Description here2", user_id: User.first.id, run_id: Run.second.id, distance: Run.second.distance, duration: 1423},
-    {name: "Workout 3", description: "Description here3", user_id: User.first.id, run_id: Run.third.id, distance: Run.third.distance, duration: 2432},
+    {name: "First Jog", description: "Amazing!", user_id: User.first.id, run_id: Run.first.id, distance: Run.first.distance, duration: 3623},
+    {name: "Slow Jog", description: "A little slow", user_id: User.first.id, run_id: Run.second.id, distance: Run.second.distance, duration: 1423},
+    {name: "Tough Jog", description: "Tough run", user_id: User.first.id, run_id: Run.third.id, distance: Run.third.distance, duration: 2432},
   ])
 
 comments = Comment.create([
     {body: "Way to go!", run_id: Workout.first.id, author_id: User.second.id},
     {body: "Way to go again!", run_id: Workout.first.id, author_id: User.third.id},
-    {body: "Way to go from myself!", run_id: Workout.first.id, author_id: User.first.id},
-    {body: "Way to go from myself!", run_id: Workout.second.id, author_id: User.first.id},
-    {body: "Way to go from myself! x2", run_id: Workout.second.id, author_id: User.first.id},
-    {body: "Way to go from myself!", run_id: Workout.third.id, author_id: User.first.id},
+    {body: "WHOA!", run_id: Workout.first.id, author_id: User.first.id},
+    {body: "Congrats!", run_id: Workout.second.id, author_id: User.first.id},
+    {body: "NICE!", run_id: Workout.second.id, author_id: User.first.id},
+    {body: "Kudos!", run_id: Workout.third.id, author_id: User.first.id},
   ])
