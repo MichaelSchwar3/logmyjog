@@ -16,7 +16,7 @@ LogMyJog allows a Jogger to be able to map out a run anywhere on the globe. Usin
 
 The routes are stored into the database by encoding the Polyline created by the API and storing as a string inside the database. The string can then be decoded in the future when the route needs to be referenced again. They are associated with the Jogger who created the route using `runner_id` as the foreign key. Additionally, info is extracted and saved using Google's API Methods
 
-```
+```javascript
 let encodeString = google.maps.geometry.encoding.encodePath(path);
 let lengthInMeters = google.maps.geometry.spherical.computeLength(path);
 let decodePath = google.maps.geometry.encoding.decodePath(encodeString)
@@ -29,7 +29,7 @@ this.setState({
 
 An additional feature built into LogMyJog’s route creation is the locational services. When opening LogMyJog’s route creation tool for the first time, Joggers are prompted to “allow” locational services. If allowed, the map will detect the Jogger’s location and zoom into that location as a starting point. The Jogger is able to zoom out at any point and change this location. If locational services are not allowed, the map will default to central Manhattan, NY.
 
-```
+```javascript
 let map, infoWindow;
 map = new google.maps.Map(this.mapNode,{
   center: {lat: 40.7831, lng: 73.9712},
