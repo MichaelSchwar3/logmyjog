@@ -34,7 +34,7 @@ class FriendIndexItem extends React.Component {
         <div id="friend-pic">&#128100;</div>
         <div id="friend-info">
           <div id="friend-name">
-            {this.props.friend.fname} {this.props.friend.lname}
+            {this.props.friend.fname}&nbsp;{this.props.friend.lname}
           </div>
           <div id="friend-unfriend">
             <button onClick={this.handleSubmit}>
@@ -48,7 +48,7 @@ class FriendIndexItem extends React.Component {
     <div className="friend-request-item">
       <div id="friend-pic">&#128100;</div>
       <div id="friend-info-request">
-        <div id="friend-name">{this.props.friend.fname}
+        <div id="friend-name">{this.props.friend.fname}&nbsp;
           {this.props.friend.lname}
         </div>
         <div id="friend-unfriend">
