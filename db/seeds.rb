@@ -39,7 +39,7 @@ friends = Friend.create([
   {friender_id: User.fifth.id, friendee_id: User.first.id, accepted: false},
   {friender_id: User.last.id, friendee_id: User.first.id, accepted: false},
   {friender_id: User.second.id, friendee_id: User.third.id, accepted: false},
-  {friender_id: User.forth.id, friendee_id: User.third.id, accepted: false},
+  {friender_id: User.fourth.id, friendee_id: User.third.id, accepted: false},
   {friender_id: User.fifth.id, friendee_id: User.third.id, accepted: false},
   {friender_id: User.last.id, friendee_id: User.third.id, accepted: false},
   ])
