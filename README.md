@@ -1,4 +1,4 @@
- ![alt text](/app/assets/images/logmyjog.png "LogMyJog")
+ ![LogMyJog](/app/assets/images/logmyjog.png "LogMyJog")
 
 [Log My Jog - Live](https://logmyjog.herokuapp.com/ "LogMyJog")
 
@@ -12,7 +12,7 @@ LogMyJog was built using a Rails backend framework, PostgreSQL for the database,
 
 LogMyJog allows a Jogger to be able to map out a run anywhere on the globe. Using Google Maps API V3, Joggers are able to click on a map as many times as they choose. A distance counter is kept on the left-hand side so they can track how far their run is at any point. Once the Joggers have completed their desired route, they can save the route in their profile so that it can be used to log future workouts.
 
- ![alt text](/app/assets/images/mappingroute.gif)
+ ![Map](/app/assets/images/mappingroute.gif)
 
 The routes are stored into the database by encoding the Polyline created by the API and storing as a string inside the database. The string can then be decoded in the future when the route needs to be referenced again. They are associated with the Jogger who created the route using `runner_id` as the foreign key. Additionally, info is extracted and saved using Google's API Methods
 
