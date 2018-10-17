@@ -13,8 +13,6 @@ const commentsReducer = (state = {}, action) => {
      const newState = merge({}, state);
      delete newState[action.commentId];
      return newState;
-   // case RECEIVE_WORKOUT:
-   //   return action.payload.comments
    default:
      return state;
  }

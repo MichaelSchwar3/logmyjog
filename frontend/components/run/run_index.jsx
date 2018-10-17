@@ -1,7 +1,6 @@
 import React from 'react';
 import RunIndexItem from './run_index_item';
 import { Link } from 'react-router-dom';
-// import CreateRunFormContainer from './create_run_form_container';
 
 class RunIndex extends React.Component {
 
