@@ -15,8 +15,11 @@ class RunMap extends React.Component{
     this.markerLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     this.markerPos = 0;
     this.markersArray = [];
+    this.polyline = "";
+    this.length = 0;
     this.placeMarker = this.placeMarker.bind(this);
     this.geolocation = this.geolocation.bind(this);
+    this.directionalServices = this.directionalServices.bind(this);
 
   }
   componentDidMount() {
@@ -65,9 +68,28 @@ class RunMap extends React.Component{
     this.markersArray.push(marker);
     if(!this.path){
       this.path = this.poly.getPath();
+      this.service = new google.maps.DirectionsService();
+      this.path.push(e.latLng);
+    }else {
+      this.service.route(
+        {
+          origin: this.path.getAt(this.path.getLength() -1),
+          destination: e.latLng,
+          travelMode: "WALKING",
+        }, this.directionalServices(e)
+      )
     }
-    this.path.push(e.latLng);
+    this.polyline = google.maps.geometry.encoding.encodePath(this.path);
+    this.length = google.maps.geometry.spherical.computeLength(this.path);
   }
+  directionalServices(e, s) {
+    console.log(e)
+    if (status == google.maps.DirectionsStatus.OK) {
+      for (let i = 0, len = result.routes[0].overview_path.length; i < len; i++){
+        this.path.push(result.routes[0].overview_path[i]);
+      }
+    }
+  };
   update(field){
     return e => {
       this.setState({
