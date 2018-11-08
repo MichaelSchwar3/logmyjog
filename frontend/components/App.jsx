@@ -44,6 +44,7 @@ const App = () => (
     <ProtectedRoute exact path='/workouts/views/:workoutId/' component={WorkoutShowContainer} />
     <ProtectedRoute exact path='/workouts/' component={WorkoutIndexContainer} />
 
+
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />

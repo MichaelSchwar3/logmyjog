@@ -12,8 +12,10 @@ class RunMap extends React.Component{
       snapToRoads: false
     }
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.undoMarker = this.undoMarker.bind(this);
+    this.clearMap = this.clearMap.bind(this);
   }
-  componentDidMount() {
+  createMap() {
     let map, infoWindow;
     map = new google.maps.Map(this.mapNode,{
       center: {lat: 40.7831, lng: 73.9712},
@@ -35,51 +37,12 @@ class RunMap extends React.Component{
       })} else {
         handleLocationError(false, infoWindow, map.getCenter())
     }
-    let poly = new google.maps.Polyline({
-    strokeColor: '#c30606',
-    strokeOpacity: 1.0,
-    strokeWeight: 4
-    });
-    poly.setMap(map);
-    let service = new google.maps.DirectionsService();
-    let path = new google.maps.MVCArray();
-    google.maps.event.addListener(map, "click", snapRoads.bind(this));
-    function snapRoads(evt) {
-      if (path.getLength() === 0) {
-        path.push(evt.latLng);
-        poly.setPath(path);
-        let encodeString = google.maps.geometry.encoding.encodePath(path);
-        let lengthInMeters = google.maps.geometry.spherical.computeLength(path);
-        this.setState({
-          polyline: encodeString,
-          distance: (lengthInMeters * 0.000621371)
-        })
-      } else {
-        service.route({
-          origin: path.getAt(path.getLength() - 1),
-          destination: evt.latLng,
-          travelMode: google.maps.DirectionsTravelMode.WALKING
-        }, function(result, status) {
-          if (status == google.maps.DirectionsStatus.OK) {
-            for (var i = 0, len = result.routes[0].overview_path.length;
-                i < len; i++) {
-              path.push(result.routes[0].overview_path[i]);
-            }
-          }
-        });
-        let encodeString = google.maps.geometry.encoding.encodePath(path);
-        let lengthInMeters = google.maps.geometry.spherical.computeLength(path);
-        let decodePath = google.maps.geometry.encoding.decodePath(encodeString)
-        this.setState({
-          polyline: encodeString,
-          distance: (lengthInMeters * 0.000621371)
-        })
-      }
-
+    this.mapHelper = new MapHelper(map, this.props.updateRoute)
   }
 
-
-  };
+  componentDidMount() {
+    this.createMap();
+  }
   update(field){
     return e => {
       this.setState({

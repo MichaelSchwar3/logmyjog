@@ -36,18 +36,18 @@ export const receiveErrors = (errors)=> {
 export const fetchRuns = () => dispatch => {
   return (
     RunAPIUtil.fetchRuns().then( runs => {
-    return dispatch(receiveAllRuns(runs))
+    return dispatch(receiveAllRuns(runs));
   }, err => {
-    return dispatch(receiveErrors(err.responseJSON))
-  }))
+    return dispatch(receiveErrors(err.responseJSON));
+  }));
 };
 
 export const fetchRun = (id) => dispatch => {
   return RunAPIUtil.fetchRun(id).then( run => {
-    return dispatch(receiveRun(run))
+    return dispatch(receiveRun(run));
   }, err => {
-    return dispatch(receiveErrors(err.responseJSON))
-  })
+    return dispatch(receiveErrors(err.responseJSON));
+  });
 };
 
 export const createRun = (run) => dispatch => {
@@ -55,7 +55,7 @@ export const createRun = (run) => dispatch => {
     dispatch(receiveRun(run))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
-  ))
+  ));
 };
 
 export const updateRun = (run) => dispatch => (
