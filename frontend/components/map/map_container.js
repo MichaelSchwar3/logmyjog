@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import RunMap from './map';
+import RunMap from './maptest';
 import { createRun } from '../../actions/run_actions';
 
 const mapStateToProps = state =>({

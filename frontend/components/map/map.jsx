@@ -14,6 +14,7 @@ class RunMap extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.markerLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     this.markerPos = 0;
+    this.markersArray = []
   }
   componentDidMount() {
     let map, infoWindow;
@@ -62,10 +63,12 @@ class RunMap extends React.Component{
         service.route({
           origin: path.getAt(path.getLength() - 1),
           destination: evt.latLng,
-          travelMode: google.maps.DirectionsTravelMode.WALKING
+          travelMode: "WALKING",
+          unitSystem: google.maps.UnitSystem.IMPERIAL
         }, function(result, status) {
           if (status == google.maps.DirectionsStatus.OK) {
-            for (var i = 0, len = result.routes[0].overview_path.length;
+            console.log(result)
+            for (let i = 0, len = result.routes[0].overview_path.length;
                 i < len; i++) {
               path.push(result.routes[0].overview_path[i]);
             }
@@ -79,11 +82,35 @@ class RunMap extends React.Component{
           distance: (lengthInMeters * 0.000621371)
         })
       }
-
-  }
-
-
+    }
   };
+  // initMap() {
+  //   let map, infoWindow;
+  //   map = new google.maps.Map(this.mapNode,{
+  //     center: {lat: 40.7831, lng: 73.9712},
+  //     zoom: 15
+  //   })
+  //   infoWindow = new google.maps.InfoWindow;
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(function(position) {
+  //       let pos = {
+  //         lat: position.coords.latitude,
+  //         lng: position.coords.longitude
+  //       };
+  //       infoWindow.setPosition(pos);
+  //       infoWindow.setContent('Location found.');
+  //       infoWindow.open(map);
+  //       map.setCenter(pos);
+  //     }, function() {
+  //       handleLocationError(true, infoWindow, map.getCenter())
+  //     })} else {
+  //       handleLocationError(false, infoWindow, map.getCenter())
+  //   }
+  //   map.addListener("click", function(e) {
+  //     console.log(e);
+  //     this.placeMarker(e.latLng, map)
+  //   })
+  // }
 
   placeMarker(location, map) {
     let marker = new google.maps.Marker({
@@ -92,6 +119,13 @@ class RunMap extends React.Component{
       map: map,
       draggable: true
     })
+    this.markersArray.push(marker);
+    console.log(this.markersArray)
+    google.maps.event.addListener(marker, 'drag' function(e) {
+      this.setPosition(e.latLng);
+
+    });
+
   }
   update(field){
     return e => {
